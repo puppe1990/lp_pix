@@ -16,7 +16,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "PrivatePix Pro | Pix Privado para Profissionais de Saúde",
+  title: "SegurePix | Pix Privado para Profissionais de Saúde",
   description:
     "Receba pagamentos via Pix sem expor seus dados pessoais. Chaves aleatórias, recibos automáticos e total conformidade com LGPD e códigos de ética profissional.",
   keywords: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     "receita saúde",
     "recibos digitais",
   ],
-  authors: [{ name: "PrivatePix Pro" }],
+  authors: [{ name: "SegurePix" }],
   openGraph: {
-    title: "PrivatePix Pro | Pix Privado para Profissionais de Saúde",
+    title: "SegurePix | Pix Privado para Profissionais de Saúde",
     description:
       "Receba pagamentos via Pix sem expor seus dados pessoais. Total conformidade com LGPD.",
     type: "website",

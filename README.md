@@ -1,6 +1,6 @@
-# PrivatePix Pro - Landing Page
+# SegurePix - Landing Page
 
-Landing page moderna para o PrivatePix Pro, uma solução de pagamentos Pix com privacidade para profissionais de saúde.
+Landing page moderna para o SegurePix, uma solução de pagamentos Pix com privacidade para profissionais de saúde.
 
 ## 🚀 Tecnologias
 
@@ -91,5 +91,5 @@ vercel --prod
 
 ## 📄 Licença
 
-Proprietário - PrivatePix Pro
+Proprietário - SegurePix
 

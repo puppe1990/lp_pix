@@ -20,7 +20,7 @@ const testimonials = [
     location: "Rio de Janeiro, RJ",
     avatar: "RM",
     content:
-      "Os recibos automáticos via Receita Saúde me economizam 4 horas por semana. Antes eu fazia tudo manualmente. PrivatePix mudou minha rotina administrativa.",
+      "Os recibos automáticos via Receita Saúde me economizam 4 horas por semana. Antes eu fazia tudo manualmente. SegurePix mudou minha rotina administrativa.",
     rating: 5,
     metric: "R$ 45k/mês em Pix",
   },
@@ -92,7 +92,7 @@ export function Testimonials() {
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
             Mais de 1.500 profissionais de saúde já protegem seus dados 
-            com o PrivatePix Pro.
+            com o SegurePix.
           </p>
         </motion.div>
 

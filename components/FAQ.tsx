@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "Como funciona o 'Pix privado'?",
     answer:
-      "O PrivatePix Pro gera chaves Pix aleatórias (EVP - Endereço Virtual de Pagamento) em vez de usar seu CPF como chave. Quando você compartilha o QR Code ou link de pagamento, o pagador vê apenas um código aleatório, não seus dados pessoais. A transação é processada normalmente, mas sua identidade fica protegida.",
+      "O SegurePix gera chaves Pix aleatórias (EVP - Endereço Virtual de Pagamento) em vez de usar seu CPF como chave. Quando você compartilha o QR Code ou link de pagamento, o pagador vê apenas um código aleatório, não seus dados pessoais. A transação é processada normalmente, mas sua identidade fica protegida.",
   },
   {
     question: "O dinheiro cai direto na minha conta?",
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "Preciso de conhecimento técnico para usar?",
     answer:
-      "Não! O PrivatePix Pro foi desenhado para profissionais de saúde, não para desenvolvedores. Nosso onboarding guiado leva menos de 10 minutos. Você só precisa criar sua conta, verificar sua identidade profissional e começar a gerar seus QR Codes. Temos suporte em português disponível para qualquer dúvida.",
+      "Não! O SegurePix foi desenhado para profissionais de saúde, não para desenvolvedores. Nosso onboarding guiado leva menos de 10 minutos. Você só precisa criar sua conta, verificar sua identidade profissional e começar a gerar seus QR Codes. Temos suporte em português disponível para qualquer dúvida.",
   },
   {
     question: "Como funcionam os recibos automáticos?",
@@ -136,7 +136,7 @@ export function FAQ() {
           className="mt-12 text-center"
         >
           <p className="text-white/60 mb-4">Ainda tem dúvidas?</p>
-          <a href="mailto:contato@privatepix.pro" className="btn-secondary">
+          <a href="mailto:contato@segurepix.com" className="btn-secondary">
             Falar com Suporte
           </a>
         </motion.div>

@@ -83,7 +83,7 @@ export function Solution() {
             </span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            PrivatePix Pro é a plataforma completa de pagamentos para profissionais 
+            SegurePix é a plataforma completa de pagamentos para profissionais 
             de saúde que valorizam sigilo e eficiência.
           </p>
         </motion.div>

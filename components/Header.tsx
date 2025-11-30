@@ -45,7 +45,7 @@ export function Header() {
               <div className="absolute -inset-1 bg-brand-500/30 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <span className="font-display font-bold text-xl">
-              Private<span className="text-brand-400">Pix</span>
+              Segure<span className="text-brand-400">Pix</span>
             </span>
           </a>
 
