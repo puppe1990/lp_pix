@@ -9,12 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.0.6",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.0",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
+    "lucide-react": "^0.400.0",
     "next": "^14.2.0",
+    "next-mdx-remote": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^11.0.0",
-    "lucide-react": "^0.400.0",
-    "clsx": "^2.1.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
@@ -29,4 +39,3 @@
     "typescript": "^5.3.0"
   }
 }
-

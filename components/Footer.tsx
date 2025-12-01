@@ -11,7 +11,7 @@ const footerLinks = {
   ],
   empresa: [
     { label: "Sobre nós", href: "#" },
-    { label: "Blog", href: "#" },
+    { label: "Blog", href: "/blog" },
     { label: "Carreiras", href: "#" },
     { label: "Contato", href: "#" },
   ],

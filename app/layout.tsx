@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Sora } from "next/font/google";
 import "./globals.css";
+import "highlight.js/styles/github-dark.css";
 
 const outfit = Outfit({
   subsets: ["latin"],
