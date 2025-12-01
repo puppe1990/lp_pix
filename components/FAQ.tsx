@@ -136,7 +136,7 @@ export function FAQ() {
           className="mt-12 text-center"
         >
           <p className="text-white/60 mb-4">Ainda tem dúvidas?</p>
-          <a href="mailto:contato@segurepix.com" className="btn-secondary">
+          <a href="mailto:contato@segurepix.com.br" className="btn-secondary">
             Falar com Suporte
           </a>
         </motion.div>

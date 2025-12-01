@@ -51,18 +51,18 @@ export function Footer() {
             </p>
             <div className="space-y-2 text-sm text-white/50">
               <a
-                href="mailto:contato@segurepix.com"
+                href="mailto:contato@segurepix.com.br"
                 className="flex items-center gap-2 hover:text-white/80 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                contato@segurepix.com
+                contato@segurepix.com.br
               </a>
               <a
                 href="tel:+5511999999999"
                 className="flex items-center gap-2 hover:text-white/80 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                (11) 99999-9999
+                (11) 99559-7242
               </a>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
