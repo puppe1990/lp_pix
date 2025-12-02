@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Sora } from "next/font/google";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
+import { FloatingContacts } from "@/components";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -46,7 +47,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${outfit.variable} ${sora.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <FloatingContacts />
+      </body>
     </html>
   );
 }
