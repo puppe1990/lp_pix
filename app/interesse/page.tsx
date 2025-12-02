@@ -15,6 +15,8 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdkqzdqn";
+
 const interestLabels: Record<string, { title: string; description: string }> = {
   starter: {
     title: "Plano Starter",
@@ -79,32 +81,36 @@ function InteresseContent() {
     setWaitlistPosition(Math.floor(Math.random() * 300 + 150));
   }, []);
 
-  // Handle form submission via AJAX (Netlify Forms)
+  // Handle form submission via Formspree
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
-    const formData = new URLSearchParams();
-    formData.append("form-name", "waitlist");
-    formData.append("subject", `🚀 Novo interesse: ${interestInfo.title} - PrivatePix Pro`);
-    formData.append("nome", nome);
-    formData.append("email", email);
-    formData.append("profissao", profissao);
-    formData.append("plano", plano);
-    formData.append("source", source);
+    const formData = {
+      nome,
+      email,
+      profissao,
+      plano: interestInfo.title,
+      source,
+      _subject: `🚀 Novo interesse: ${interestInfo.title} - PrivatePix Pro`,
+    };
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData.toString(),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setSubmitted(true);
       } else {
-        throw new Error("Erro ao enviar formulário");
+        const data = await response.json();
+        throw new Error(data.error || "Erro ao enviar formulário");
       }
     } catch (err) {
       console.error("Form submission error:", err);
@@ -323,11 +329,8 @@ function InteresseContent() {
                   </div>
                 )}
 
-                {/* Form with AJAX submission */}
+                {/* Form with Formspree */}
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Hidden field for Netlify to identify the form */}
-                  <input type="hidden" name="form-name" value="waitlist" />
-
                   <div>
                     <label
                       htmlFor="nome"
