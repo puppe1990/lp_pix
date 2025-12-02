@@ -2,13 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
-# Plugin para Next.js - gerencia automaticamente as funções serverless
+# Plugin para Next.js
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Configuração de ambiente
-[build.environment]
-  NEXT_TELEMETRY_DISABLED = "1"
 
 # Headers de segurança
 [[headers]]

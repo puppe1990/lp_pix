@@ -1,16 +1,22 @@
-<!--
-  Este arquivo existe apenas para que o Netlify detecte os formulários
-  durante o build. Não é exibido para os usuários.
--->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Formulários Netlify</title>
+  <title>Formulário - PrivatePix Pro</title>
 </head>
 <body>
-  <!-- Formulário de Waitlist / Fake Door Testing -->
-  <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+  <!-- 
+    Este formulário HTML estático permite que o Netlify detecte e configure 
+    o form handler durante o build. O formulário real é renderizado pelo React
+    e enviado via AJAX.
+  -->
+  <form 
+    name="waitlist" 
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="waitlist" />
     <input type="text" name="nome" />
     <input type="email" name="email" />
     <select name="profissao">
@@ -23,9 +29,10 @@
       <option value="contabilidade">Contabilidade</option>
       <option value="outro">Outro</option>
     </select>
-    <input type="hidden" name="plano" />
-    <input type="hidden" name="source" />
+    <input type="text" name="plano" />
+    <input type="text" name="source" />
     <input name="bot-field" />
+    <button type="submit">Enviar</button>
   </form>
 </body>
 </html>
