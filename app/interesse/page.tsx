@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import {
   Rocket,
   Bell,
-  CheckCircle2,
   ArrowLeft,
   Sparkles,
   Users,
   Clock,
-  Heart,
 } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -60,106 +58,19 @@ function InteresseContent() {
   const searchParams = useSearchParams();
   const interesse = searchParams.get("interesse") || "geral";
   const plano = searchParams.get("plano") || interesse;
+  const source = searchParams.get("source") || "direct";
   
-  const [email, setEmail] = useState("");
-  const [nome, setNome] = useState("");
-  const [profissao, setProfissao] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [waitlistPosition, setWaitlistPosition] = useState<number | null>(null);
   const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
 
   const interestInfo = interestLabels[plano] || interestLabels.geral;
 
   // Generate random numbers only on client side to avoid hydration mismatch
   useEffect(() => {
-    setWaitlistPosition(Math.floor(Math.random() * 300 + 150));
     setWaitlistCount(Math.floor(Math.random() * 200 + 100));
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // Simula envio - aqui você integraria com seu backend/CRM
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Log para analytics (aqui você integraria com Google Analytics, Mixpanel, etc.)
-    console.log("Fake Door Interest:", {
-      interesse: plano,
-      email,
-      nome,
-      profissao,
-      timestamp: new Date().toISOString(),
-      source: searchParams.get("source") || "direct",
-    });
-
-    setLoading(false);
-    setSubmitted(true);
-  };
-
-  if (submitted) {
-    return (
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-600/20 via-midnight-950 to-midnight-950" />
-          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-brand-500/20 rounded-full blur-[150px]" />
-          <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-accent-purple/15 rounded-full blur-[120px]" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative z-10 text-center px-4 max-w-lg mx-auto"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="w-24 h-24 mx-auto mb-8 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center"
-          >
-            <CheckCircle2 className="w-12 h-12 text-white" />
-          </motion.div>
-
-          <h1 className="heading-lg mb-4">
-            <span className="gradient-text">Obrigado!</span>
-          </h1>
-
-          <p className="text-xl text-white/70 mb-6">
-            Você está na lista de espera! 🎉
-          </p>
-
-          <p className="text-white/50 mb-8">
-            Vamos te avisar assim que o{" "}
-            <span className="text-brand-400 font-semibold">
-              {interestInfo.title}
-            </span>{" "}
-            estiver disponível. Fique de olho no seu e-mail!
-          </p>
-
-          <div className="glass rounded-2xl p-6 mb-8">
-            <div className="flex items-center justify-center gap-3 text-brand-400">
-              <Heart className="w-5 h-5" />
-              <span className="font-medium">
-                Você é o #{waitlistPosition ?? "..."} da lista
-              </span>
-            </div>
-          </div>
-
-          <Link
-            href="/"
-            className="btn-secondary inline-flex items-center gap-2"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Voltar ao início
-          </Link>
-        </motion.div>
-      </section>
-    );
-  }
+  // Build the success URL with the plan parameter
+  const successUrl = `/interesse/sucesso?plano=${plano}`;
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
@@ -272,7 +183,27 @@ function InteresseContent() {
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Netlify Form */}
+                <form 
+                  name="waitlist"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  action={successUrl}
+                  className="space-y-5"
+                >
+                  {/* Hidden fields for Netlify */}
+                  <input type="hidden" name="form-name" value="waitlist" />
+                  <input type="hidden" name="plano" value={plano} />
+                  <input type="hidden" name="source" value={source} />
+                  
+                  {/* Honeypot field for spam protection */}
+                  <p className="hidden">
+                    <label>
+                      Não preencha isso: <input name="bot-field" />
+                    </label>
+                  </p>
+
                   <div>
                     <label
                       htmlFor="nome"
@@ -283,8 +214,7 @@ function InteresseContent() {
                     <input
                       type="text"
                       id="nome"
-                      value={nome}
-                      onChange={(e) => setNome(e.target.value)}
+                      name="nome"
                       required
                       placeholder="Como podemos te chamar?"
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all"
@@ -301,8 +231,7 @@ function InteresseContent() {
                     <input
                       type="email"
                       id="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      name="email"
                       required
                       placeholder="seu@email.com"
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all"
@@ -318,8 +247,7 @@ function InteresseContent() {
                     </label>
                     <select
                       id="profissao"
-                      value={profissao}
-                      onChange={(e) => setProfissao(e.target.value)}
+                      name="profissao"
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all appearance-none cursor-pointer"
                     >
@@ -355,39 +283,12 @@ function InteresseContent() {
 
                   <button
                     type="submit"
-                    disabled={loading}
-                    className="btn-primary w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full text-lg py-4"
                   >
-                    {loading ? (
-                      <span className="flex items-center justify-center gap-2">
-                        <svg
-                          className="animate-spin h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          />
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          />
-                        </svg>
-                        Entrando na lista...
-                      </span>
-                    ) : (
-                      <span className="flex items-center justify-center gap-2">
-                        <Sparkles className="w-5 h-5" />
-                        Quero ser avisado!
-                      </span>
-                    )}
+                    <span className="flex items-center justify-center gap-2">
+                      <Sparkles className="w-5 h-5" />
+                      Quero ser avisado!
+                    </span>
                   </button>
 
                   <p className="text-xs text-white/40 text-center">
@@ -441,4 +342,3 @@ export default function InteressePage() {
     </Suspense>
   );
 }
-

@@ -1,0 +1,32 @@
+<!--
+  Este arquivo existe apenas para que o Netlify detecte os formulários
+  durante o build. Não é exibido para os usuários.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulários Netlify</title>
+</head>
+<body>
+  <!-- Formulário de Waitlist / Fake Door Testing -->
+  <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nome" />
+    <input type="email" name="email" />
+    <select name="profissao">
+      <option value="psicologia">Psicologia</option>
+      <option value="odontologia">Odontologia</option>
+      <option value="fisioterapia">Fisioterapia</option>
+      <option value="medicina">Medicina</option>
+      <option value="nutricao">Nutrição</option>
+      <option value="advocacia">Advocacia</option>
+      <option value="contabilidade">Contabilidade</option>
+      <option value="outro">Outro</option>
+    </select>
+    <input type="hidden" name="plano" />
+    <input type="hidden" name="source" />
+    <input name="bot-field" />
+  </form>
+</body>
+</html>
+
