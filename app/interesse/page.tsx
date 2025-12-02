@@ -87,6 +87,7 @@ function InteresseContent() {
 
     const formData = new URLSearchParams();
     formData.append("form-name", "waitlist");
+    formData.append("subject", `🚀 Novo interesse: ${interestInfo.title} - PrivatePix Pro`);
     formData.append("nome", nome);
     formData.append("email", email);
     formData.append("profissao", profissao);
