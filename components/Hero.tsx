@@ -123,7 +123,10 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a href="#precos" className="btn-primary text-lg px-8 py-4 group">
+          <a 
+            href="/interesse?plano=geral&source=hero_cta" 
+            className="btn-primary text-lg px-8 py-4 group"
+          >
             Começar Gratuitamente
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>

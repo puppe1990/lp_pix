@@ -61,10 +61,10 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="#" className="btn-ghost">
+            <a href="/interesse?plano=geral&source=header_login" className="btn-ghost">
               Entrar
             </a>
-            <a href="#precos" className="btn-primary group">
+            <a href="/interesse?plano=geral&source=header_cta" className="btn-primary group">
               Começar Grátis
               <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
@@ -117,10 +117,10 @@ export function Header() {
                 </motion.a>
               ))}
               <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
-                <a href="#" className="btn-secondary justify-center">
+                <a href="/interesse?plano=geral&source=mobile_login" className="btn-secondary justify-center">
                   Entrar
                 </a>
-                <a href="#precos" className="btn-primary justify-center">
+                <a href="/interesse?plano=geral&source=mobile_cta" className="btn-primary justify-center">
                   Começar Grátis
                 </a>
               </div>

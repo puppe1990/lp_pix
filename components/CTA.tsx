@@ -62,13 +62,16 @@ export function CTA() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#precos"
+              href="/interesse?plano=geral&source=cta_section"
               className="btn-primary text-lg px-10 py-4 group"
             >
               Começar Gratuitamente
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="#" className="btn-secondary text-lg px-8 py-4">
+            <a 
+              href="/interesse?plano=demo&source=cta_demo" 
+              className="btn-secondary text-lg px-8 py-4"
+            >
               Agendar Demo
             </a>
           </div>

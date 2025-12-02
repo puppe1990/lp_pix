@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 const plans = [
   {
     name: "Starter",
+    slug: "starter",
     description: "Para profissionais iniciando",
     price: "49",
     period: "/mês",
@@ -25,6 +26,7 @@ const plans = [
   },
   {
     name: "Professional",
+    slug: "professional",
     description: "Para consultórios estabelecidos",
     price: "99",
     period: "/mês",
@@ -46,6 +48,7 @@ const plans = [
   },
   {
     name: "Enterprise",
+    slug: "enterprise",
     description: "Para clínicas e equipes",
     price: "199",
     period: "/mês",
@@ -185,7 +188,7 @@ export function Pricing() {
               {/* CTA */}
               <div className="space-y-3">
                 <a
-                  href="#"
+                  href={`/interesse?plano=${plan.slug}&source=pricing_card`}
                   className={cn(
                     "block w-full text-center py-3 rounded-xl font-semibold transition-all",
                     plan.featured
