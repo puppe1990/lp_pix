@@ -1,0 +1,73 @@
+---
+title: "Plano de Contingência Pix para Consultórios: Bloqueios, Limites Noturnos e Redundância"
+date: "2025-12-05"
+excerpt: "Como proteger o caixa do consultório contra bloqueios e limites do Pix, mantendo sigilo e continuidade dos atendimentos."
+author: "Equipe SegurePix"
+tags: ["Pix", "Bloqueio", "Limites", "Contingência", "Consultório", "LGPD", "Segurança"]
+---
+
+## Por Que Consultórios Sofrem Mais com Bloqueios
+
+- **Perfil de risco**: volumes recorrentes e horários tardios são tratados como anômalos pelos bancos.
+- **Dados sensíveis**: CPF/nome expostos em cada chave facilitam engenharia social contra você ou seus pacientes.
+- **Dependência única**: operar com uma única conta/banco deixa o consultório vulnerável a qualquer indisponibilidade ou bloqueio cautelar.
+- **Novos limites**: bancos vêm aplicando tetos diários/noturnos e bloqueios temporários alinhados ao MED do BC.
+
+## Objetivo do Plano
+
+1. Evitar exposição de CPF/nome na cobrança.
+2. Garantir continuidade dos recebimentos mesmo com bloqueios ou quedas de um PSP/banco.
+3. Ter passos claros para reverter bloqueios, responder a chargebacks (MED) e manter compliance LGPD.
+
+## Diagnóstico Rápido (15 minutos)
+
+1. **Mapeie chaves e bancos**: quais são CPF, CNPJ ou aleatórias? Todas expõem seu nome? Alguma está perto do limite diário?
+2. **Identifique horários críticos**: teleatendimentos noturnos e sessões de fim de semana costumam disparar filtros de risco.
+3. **Classifique tickets**: agrupe valores típicos (ex.: R$150–300 sessão; R$800 pacote). Tickets fora da curva exigem aprovação manual.
+4. **Verifique recibos**: você emite recibos digitais? Falta de recibo aumenta probabilidade de disputa e MED.
+
+## Arquitetura Resiliente de Cobrança
+
+### 1) Redundância de chaves e PSPs
+
+- **Chave aleatória primária**: usada na maioria das cobranças para ocultar CPF/CNPJ.
+- **Chave secundária (backup)**: em banco ou PSP diferente para contingência.
+- **Failover manual**: se o PSP A cair ou bloquear, mova as cobranças recorrentes para a chave B e notifique pacientes por mensagem padrão.
+- **Distribuição por contexto**: uma chave para teleatendimento, outra para presencial, outra para pacotes. Reduz risco de bloqueio total e facilita conciliação.
+
+### 2) Limites e horários
+
+- **Ajuste limites diurnos e noturnos**: configure tetos alinhados ao ticket médio; evite estouro repentino que aciona antifraude.
+- **Cadastro de dispositivo**: use apenas celulares/computadores registrados no banco para criar/editar QR Codes.
+- **Agenda + cobrança**: alinhe a agenda de sessões com o envio de links/QR para evitar picos fora do padrão.
+
+### 3) Recibos e rastreabilidade
+
+- **Recibos digitais automáticos**: vinculam pagamento ao paciente/serviço e reduzem disputas.
+- **Logs auditáveis**: registre quem enviou a cobrança, quando, e qual dispositivo foi usado. Ajuda a provar autoria em disputas.
+- **Dados sensíveis segregados**: nunca inclua dados clínicos no comprovante; apenas serviço, data e valores.
+
+## Playbook de Resposta a Bloqueio
+
+1. **Suspender novas cobranças na chave bloqueada** e mover para a chave backup.
+2. **Abrir ticket imediato** no banco/PSP com: comprovantes, agenda de atendimentos, recibos emitidos e identificação do profissional.
+3. **Notificar pacientes** com mensagem curta: "Nossa chave Pix principal está em revisão de segurança. Use esta chave temporária: ...".
+4. **Revisar fluxos**: houve valor atípico? Horário fora do padrão? Dispositivo não autorizado?
+5. **Documentar o incidente** para LGPD/ética: horário, impacto, dados acessados, medidas adotadas.
+
+## Checklist LGPD + Ética
+
+- Usa **chave aleatória** como padrão (menos exposição de CPF/nome).
+- Possui **consentimento** para armazenar dados de pagamento associados ao paciente.
+- Registra **quem acessou** os dados e quando (trilha de auditoria).
+- Tem **política de retenção**: deleta dados que não são fiscais ou legais após o prazo mínimo.
+- **Comunica incidentes** relevantes a pacientes e, se necessário, ao conselho/autoridade.
+
+## Como a SegurePix Ajuda
+
+- **Chaves aleatórias ilimitadas** por contexto (teleatendimento, presencial, pacotes).
+- **Failover multi-PSP** com troca automática de QR/links em incidentes.
+- **Recibos digitais** alinhados à Receita Saúde, sem dados clínicos sensíveis.
+- **Painel de risco**: monitoramento de limites, alertas de bloqueio e rastreabilidade para MED.
+
+Ter um plano de contingência evita interrupções no caixa e protege a privacidade dos pacientes. Configure suas chaves, limites e backup hoje — a hora de fazer é antes do primeiro bloqueio.

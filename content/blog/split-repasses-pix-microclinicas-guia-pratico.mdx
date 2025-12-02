@@ -1,0 +1,74 @@
+---
+title: "Split e Repasses Pix para Microclínicas: Guia Prático de Organização e Compliance"
+date: "2025-12-06"
+excerpt: "Como estruturar múltiplas chaves Pix, repasses por profissional e conciliação automática sem expor dados sensíveis."
+author: "Equipe SegurePix"
+tags: ["Pix", "Microclínicas", "Split", "Conciliação", "LGPD", "Consultório"]
+---
+
+## O Problema de Operar com Uma Única Chave
+
+Em microclínicas, tudo passa pela mesma chave Pix do CNPJ ou CPF do sócio. Isso gera:
+- **Repasses manuais** para cada profissional (erro e atraso).
+- **Risco fiscal**: quem emite o recibo? Em nome de quem entra a receita?
+- **Exposição de CPF/nome** nas cobranças, indo contra sigilo e LGPD.
+- **Dificuldade de auditoria**: sem logs por sala, profissional ou serviço.
+
+## Objetivos do Modelo de Split
+
+1. Separar recebimentos por profissional/sala sem expor dados pessoais.
+2. Emitir recibos na entidade correta (profissional ou clínica).
+3. Automatizar repasses e conciliação, mantendo trilha de auditoria.
+4. Facilitar rateio de taxas e impostos (ISS, IR/MEI) sem planilhas manuais.
+
+## Arquitetura Recomendada
+
+### 1) Múltiplas chaves por contexto
+
+- **Chave por profissional**: consultas individuais; recibo emitido em nome do prestador.
+- **Chave por sala/procedimento**: pacotes ou procedimentos compartilhados; recibo em nome da clínica.
+- **Chave de contingência**: banco/PSP alternativo para falhas ou bloqueios.
+- Todas as chaves devem ser **aleatórias** para reduzir exposição de CPF/CNPJ na confirmação.
+
+### 2) Split e repasse automático
+
+- **Regra de split**: define percentual ou valor fixo por cobrança (ex.: 85% profissional / 15% clínica).
+- **Repasse D+0/D+1**: evita caixa preso e reduz brigas internas.
+- **Logs de repasse**: valor bruto, taxas, valor líquido, data/hora e comprovante do repasse.
+- **Contas separadas**: mantenha contas de operação e de liquidação separadas para simplificar auditoria.
+
+### 3) Recibos e fiscal
+
+- **Recibo no emissor correto**: se a clínica vende o pacote, recibo sai pela clínica; se o profissional vende a consulta, recibo sai pelo CPF/CNPJ dele.
+- **NFS-e integrada**: automatize via provedor para evitar atrasos e erros de município.
+- **Retenção de dados**: não armazene dados clínicos no comprovante; apenas serviço, data, valores e identificador do paciente.
+
+### 4) Permissões e auditoria
+
+- **Perfis por papel**: recepção emite cobrança mas não vê valores; gestor vê relatórios consolidados; profissionais veem apenas seus repasses.
+- **Trilha de auditoria**: quem criou a cobrança, quem alterou o valor, quem marcou como pago.
+- **Alertas**: avise quando um repasse falhar ou quando um valor fugir do padrão do profissional.
+
+## Passo a Passo para Implantar em 10 Dias
+
+- **Dia 1-2**: mapear profissionais, serviços e percentuais de split. Definir quem emite recibo em cada caso.
+- **Dia 3-4**: criar chaves aleatórias por profissional/sala e testar recebimento em conta segregada.
+- **Dia 5-6**: configurar regras de repasse automático e recibos digitais/NFS-e.
+- **Dia 7-8**: habilitar permissões (recepção, gestor, profissional) e logs.
+- **Dia 9-10**: rodar piloto com 5–10 cobranças reais; revisar discrepâncias e publicar playbook interno.
+
+## Erros Comuns (e Como Evitar)
+
+- **Usar CNPJ único para tudo**: gera reconciliação manual e risco fiscal se o prestador não for sócio.
+- **Não separar contas**: misturar operação e liquidação dificulta reembolso e auditoria.
+- **Falta de recibo automático**: aumenta disputas e bloqueios via MED.
+- **Sem chave de contingência**: qualquer bloqueio paralisa a clínica inteira.
+
+## Como a SegurePix Ajuda
+
+- **Chaves aleatórias ilimitadas** por profissional/sala com painel único.
+- **Split e repasse automático** configurável por percentual ou valor fixo.
+- **Recibos digitais e NFS-e** automáticos com trilha de auditoria.
+- **Permissões por papel** e alertas de risco para evitar fraudes internas.
+
+Organizar split e repasses desde o início elimina atritos, reduz risco fiscal e protege os dados sensíveis de pacientes e profissionais. Estruture agora e ganhe tempo de volta no consultório.
