@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://segurepix.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://segurepix.com.br'
 
   // Rotas estáticas
   const staticRoutes: MetadataRoute.Sitemap = [
