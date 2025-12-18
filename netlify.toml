@@ -2,6 +2,19 @@
   command = "npm run build"
   publish = ".next"
 
+# Canonical domain (www)
+[[redirects]]
+  from = "https://segurepix.com.br/*"
+  to = "https://www.segurepix.com.br/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://segurepix.com.br/*"
+  to = "https://www.segurepix.com.br/:splat"
+  status = 301
+  force = true
+
 # Plugin para Next.js
 [[plugins]]
   package = "@netlify/plugin-nextjs"

@@ -112,7 +112,7 @@ export function Testimonials() {
 
               {/* Content */}
               <p className="text-white/70 mb-6 leading-relaxed">
-                "{testimonial.content}"
+                “{testimonial.content}”
               </p>
 
               {/* Rating */}
@@ -159,7 +159,7 @@ export function Testimonials() {
             { value: "R$ 8M+", label: "Transacionados/mês" },
             { value: "99,5%", label: "Uptime garantido" },
             { value: "4.9/5", label: "Avaliação média" },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-display font-bold gradient-text">
                 {stat.value}
@@ -172,4 +172,3 @@ export function Testimonials() {
     </section>
   );
 }
-

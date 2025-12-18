@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import React from "react";
 
 interface BlogPostPageProps {
   params: {
@@ -44,87 +45,96 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 }
 
 const mdxComponents = {
-  h1: (props: any) => (
+  h1: (props: React.ComponentPropsWithoutRef<"h1">) => (
     <h1
       className="text-3xl md:text-4xl font-bold text-white mt-12 mb-6 pb-3 border-b border-white/10"
       {...props}
     />
   ),
-  h2: (props: any) => (
+  h2: (props: React.ComponentPropsWithoutRef<"h2">) => (
     <h2
       className="text-2xl md:text-3xl font-bold text-white mt-10 mb-4"
       {...props}
     />
   ),
-  h3: (props: any) => (
+  h3: (props: React.ComponentPropsWithoutRef<"h3">) => (
     <h3
       className="text-xl md:text-2xl font-semibold text-white mt-8 mb-3"
       {...props}
     />
   ),
-  h4: (props: any) => (
+  h4: (props: React.ComponentPropsWithoutRef<"h4">) => (
     <h4 className="text-lg font-semibold text-white mt-6 mb-2" {...props} />
   ),
-  p: (props: any) => (
+  p: (props: React.ComponentPropsWithoutRef<"p">) => (
     <p className="text-white/70 leading-relaxed mb-5 text-lg" {...props} />
   ),
-  a: (props: any) => (
+  a: (props: React.ComponentPropsWithoutRef<"a">) => (
     <a
       className="text-brand-400 hover:text-brand-300 underline underline-offset-4 decoration-brand-500/30 hover:decoration-brand-400 transition-colors"
       {...props}
     />
   ),
-  ul: (props: any) => (
+  ul: (props: React.ComponentPropsWithoutRef<"ul">) => (
     <ul className="mb-6 space-y-3 text-white/70" {...props} />
   ),
-  ol: (props: any) => (
+  ol: (props: React.ComponentPropsWithoutRef<"ol">) => (
     <ol className="mb-6 space-y-3 text-white/70 list-decimal list-inside" {...props} />
   ),
-  li: (props: any) => (
+  li: (props: React.ComponentPropsWithoutRef<"li">) => (
     <li className="flex items-start gap-3 text-lg">
       <span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-3 flex-shrink-0" />
       <span {...props} />
     </li>
   ),
-  blockquote: (props: any) => (
+  blockquote: (props: React.ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote
       className="border-l-4 border-brand-500 pl-6 py-2 my-6 bg-brand-500/5 rounded-r-lg"
       {...props}
     />
   ),
-  code: (props: any) => (
+  code: (props: React.ComponentPropsWithoutRef<"code">) => (
     <code
       className="bg-white/10 px-2 py-1 rounded text-sm font-mono text-brand-300"
       {...props}
     />
   ),
-  pre: (props: any) => (
+  pre: (props: React.ComponentPropsWithoutRef<"pre">) => (
     <pre
       className="bg-midnight-900/80 border border-white/10 p-5 rounded-xl overflow-x-auto mb-6 text-sm"
       {...props}
     />
   ),
-  strong: (props: any) => (
+  strong: (props: React.ComponentPropsWithoutRef<"strong">) => (
     <strong className="font-semibold text-white" {...props} />
   ),
-  em: (props: any) => <em className="italic text-white/80" {...props} />,
-  hr: (props: any) => <hr className="my-10 border-white/10" {...props} />,
-  table: (props: any) => (
+  em: (props: React.ComponentPropsWithoutRef<"em">) => (
+    <em className="italic text-white/80" {...props} />
+  ),
+  hr: (props: React.ComponentPropsWithoutRef<"hr">) => (
+    <hr className="my-10 border-white/10" {...props} />
+  ),
+  table: (props: React.ComponentPropsWithoutRef<"table">) => (
     <div className="overflow-x-auto mb-6">
       <table className="w-full border-collapse" {...props} />
     </div>
   ),
-  th: (props: any) => (
+  th: (props: React.ComponentPropsWithoutRef<"th">) => (
     <th
       className="border border-white/10 px-4 py-3 bg-white/5 font-semibold text-left text-white"
       {...props}
     />
   ),
-  td: (props: any) => (
+  td: (props: React.ComponentPropsWithoutRef<"td">) => (
     <td className="border border-white/10 px-4 py-3 text-white/70" {...props} />
   ),
-  img: (props: any) => (
-    <img className="rounded-xl my-6 max-w-full border border-white/10" {...props} />
+  img: (props: React.ComponentPropsWithoutRef<"img">) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      className="rounded-xl my-6 max-w-full border border-white/10"
+      alt={props.alt ?? ""}
+      {...props}
+    />
   ),
 };
 

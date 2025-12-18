@@ -105,7 +105,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-wrap justify-center gap-3 mb-10"
         >
-          {benefits.map((benefit, index) => (
+          {benefits.map((benefit) => (
             <div
               key={benefit}
               className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10"
@@ -176,4 +176,3 @@ export function Hero() {
     </section>
   );
 }
-

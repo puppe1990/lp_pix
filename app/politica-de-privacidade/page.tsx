@@ -487,7 +487,7 @@ export default function PoliticaDePrivacidadePage() {
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>Notificação por e-mail para o endereço cadastrado;</li>
             <li>Aviso destacado na plataforma;</li>
-            <li>Atualização da data de "Última atualização" no topo desta política.</li>
+            <li>Atualização da data de “Última atualização” no topo desta política.</li>
           </ul>
           <p>
             Recomendamos que você revise esta política periodicamente. O uso continuado de nossos serviços após alterações constitui aceitação da política atualizada.
@@ -720,4 +720,3 @@ export default function PoliticaDePrivacidadePage() {
     </>
   );
 }
-

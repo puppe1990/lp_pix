@@ -138,8 +138,8 @@ export function Problem() {
           className="mt-12 text-center"
         >
           <blockquote className="text-lg md:text-xl text-white/60 italic max-w-3xl mx-auto">
-            "Meus pacientes viam meu CPF e nome completo a cada sessão. 
-            Isso comprometia a neutralidade terapêutica que precisamos manter."
+            “Meus pacientes viam meu CPF e nome completo a cada sessão.
+            Isso comprometia a neutralidade terapêutica que precisamos manter.”
           </blockquote>
           <cite className="block mt-4 text-white/40 not-italic">
             — Psicóloga clínica, São Paulo
@@ -149,4 +149,3 @@ export function Problem() {
     </section>
   );
 }
-

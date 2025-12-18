@@ -18,6 +18,9 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.segurepix.com.br"
+  ),
   title: "SegurePix | Pix Privado para Profissionais de Saúde",
   description:
     "Receba pagamentos via Pix sem expor seus dados pessoais. Chaves aleatórias, recibos automáticos e total conformidade com LGPD e códigos de ética profissional.",
@@ -37,6 +40,7 @@ export const metadata: Metadata = {
       "Receba pagamentos via Pix sem expor seus dados pessoais. Total conformidade com LGPD.",
     type: "website",
     locale: "pt_BR",
+    url: "/",
   },
 };
 
@@ -54,4 +58,3 @@ export default function RootLayout({
     </html>
   );
 }
-
