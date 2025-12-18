@@ -10,4 +10,4 @@ export { CTA } from "./CTA";
 export { Footer } from "./Footer";
 export { ShareButton } from "./ShareButton";
 export { FloatingContacts } from "./FloatingContacts";
-
+export { BlogIndex } from "./BlogIndex";

@@ -32,14 +32,26 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  const title = post.seoTitle?.trim() || `${post.title} | Blog SegurePix`;
+  const description = post.seoDescription?.trim() || post.excerpt || "";
+
   return {
-    title: `${post.title} | Blog SegurePix`,
-    description: post.excerpt || '',
+    title,
+    description,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
-      title: post.title,
-      description: post.excerpt || '',
+      title,
+      description,
       type: 'article',
       publishedTime: post.date,
+      url: `/blog/${post.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
@@ -145,10 +157,51 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.segurepix.com.br";
+  const parsedBaseUrl = new URL(rawBaseUrl);
+  if (parsedBaseUrl.host === "segurepix.com.br") {
+    parsedBaseUrl.host = "www.segurepix.com.br";
+  }
+  const baseUrl = parsedBaseUrl.toString().replace(/\/$/, "");
+  const canonicalUrl = `${baseUrl}/blog/${post.slug}`;
+  const description = post.seoDescription?.trim() || post.excerpt || "";
+  const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.seoTitle?.trim() || post.title,
+    description,
+    datePublished: post.date || undefined,
+    dateModified: post.date || undefined,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
+    author: {
+      "@type": "Organization",
+      name: post.author || "SegurePix",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SegurePix",
+    },
+    keywords: post.tags?.length ? post.tags.join(", ") : undefined,
+    wordCount: wordCount || undefined,
+    inLanguage: "pt-BR",
+  };
+  if (post.image) {
+    jsonLd.image = post.image.startsWith("http") ? post.image : `${baseUrl}${post.image}`;
+  }
+
   return (
     <>
       <Header />
       <main className="min-h-screen relative overflow-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/3 w-[800px] h-[800px] bg-brand-500/10 rounded-full blur-[180px]" />

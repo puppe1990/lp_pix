@@ -7,13 +7,18 @@ const postsDirectory = path.join(process.cwd(), 'content', 'blog');
 export interface BlogPost {
   slug: string;
   title: string;
+  seoTitle?: string;
   date: string;
   excerpt?: string;
+  seoDescription?: string;
   author?: string;
   tags?: string[];
+  image?: string;
   content: string;
   readingTime?: number;
 }
+
+export type BlogPostSummary = Omit<BlogPost, 'content'>;
 
 export function getPostSlugs(): string[] {
   if (!fs.existsSync(postsDirectory)) {
@@ -44,10 +49,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
     return {
       slug: realSlug,
       title: data.title || '',
+      seoTitle: data.seoTitle || '',
       date: data.date || '',
       excerpt: data.excerpt || '',
+      seoDescription: data.seoDescription || '',
       author: data.author || '',
       tags: data.tags || [],
+      image: data.image || '',
       content,
       readingTime: calculateReadingTime(content),
     };
@@ -59,10 +67,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return {
     slug: realSlug,
     title: data.title || '',
+    seoTitle: data.seoTitle || '',
     date: data.date || '',
     excerpt: data.excerpt || '',
+    seoDescription: data.seoDescription || '',
     author: data.author || '',
     tags: data.tags || [],
+    image: data.image || '',
     content,
     readingTime: calculateReadingTime(content),
   };
@@ -78,9 +89,13 @@ export function getAllPosts(): BlogPost[] {
   return posts;
 }
 
+export function getAllPostSummaries(): BlogPostSummary[] {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  return getAllPosts().map(({ content: _content, ...summary }) => summary);
+}
+
 function calculateReadingTime(content: string): number {
   const wordsPerMinute = 200;
   const words = content.split(/\s+/).length;
   return Math.ceil(words / wordsPerMinute);
 }
-

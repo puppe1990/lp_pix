@@ -1,8 +1,7 @@
-import { getAllPosts } from '@/lib/blog';
+import { getAllPostSummaries } from '@/lib/blog';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const posts = getAllPosts();
+  const posts = getAllPostSummaries();
   return NextResponse.json(posts);
 }
-

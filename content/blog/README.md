@@ -22,10 +22,13 @@ Conteúdo do post em Markdown/MDX...
 ## Campos do Frontmatter
 
 - `title` (obrigatório): Título do post
+- `seoTitle` (opcional): Title tag (SEO) para o `<head>` (ideal ~50–60 caracteres)
 - `date` (obrigatório): Data de publicação no formato YYYY-MM-DD
 - `excerpt` (opcional): Breve descrição que aparece na listagem
+- `seoDescription` (opcional): Meta description (SEO) para o `<head>` (ideal ~155–160 caracteres)
 - `author` (opcional): Nome do autor
 - `tags` (opcional): Array de tags para categorização
+- `image` (opcional): URL absoluta (ou caminho em `/public`) para Open Graph/Schema (ex.: `/og/meu-post.png`)
 
 ## Exemplo
 
@@ -39,4 +42,3 @@ Veja o arquivo `exemplo-post.mdx` para um exemplo completo de post.
 - Tabelas (GitHub Flavored Markdown)
 - Links automáticos em títulos
 - Estilos customizados via Tailwind CSS
-
