@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "Como funciona o 'Pix privado'?",
     answer:
-      "O SegurePix gera chaves Pix aleatórias (EVP - Endereço Virtual de Pagamento) em vez de usar seu CPF como chave. Quando você compartilha o QR Code ou link de pagamento, o pagador vê apenas um código aleatório, não seus dados pessoais. A transação é processada normalmente, mas sua identidade fica protegida.",
+      "O SegurePix prioriza chaves Pix aleatórias (EVP - Endereço Virtual de Pagamento) em vez de CPF como chave principal. Com QR Code ou link, você reduz exposição de dados pessoais e melhora a organização da cobrança no consultório.",
   },
   {
     question: "O dinheiro cai direto na minha conta?",
@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "É realmente seguro e legal?",
     answer:
-      "Totalmente. Somos regulamentados pelo Banco Central e operamos em conformidade com todas as normas do Sistema de Pagamentos Brasileiro. Além disso, seguimos rigorosamente a LGPD (Lei Geral de Proteção de Dados), as resoluções do CFP, CFO, COFFITO e demais conselhos profissionais. Nossos sistemas possuem criptografia ponta a ponta e auditorias regulares.",
+      "Trabalhamos para operar com parceiros e processos alinhados às normas aplicáveis, incluindo privacidade de dados e boas práticas de segurança. A adequação final depende do fluxo contratado e da implementação no seu contexto operacional e fiscal.",
   },
   {
     question: "Preciso de conhecimento técnico para usar?",
@@ -144,4 +144,3 @@ export function FAQ() {
     </section>
   );
 }
-

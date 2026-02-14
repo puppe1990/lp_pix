@@ -20,7 +20,7 @@ const floatingIcons = [
 const benefits = [
   "Chaves Pix aleatórias",
   "Recibos automáticos",
-  "100% LGPD",
+  "Controles alinhados a LGPD",
 ];
 
 export function Hero() {
@@ -94,8 +94,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 text-balance"
         >
-          Proteja seu CPF e nome em cada transação. Chaves aleatórias, recibos 
-          digitais automáticos e total conformidade com LGPD e códigos de ética.
+          Reduza a exposição de CPF e nome no recebimento via Pix. Chaves
+          aleatórias, recibos digitais e fluxo operacional alinhado a boas
+          práticas de privacidade.
         </motion.p>
 
         {/* Benefits pills */}
