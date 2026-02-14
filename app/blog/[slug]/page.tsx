@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getAllPosts } from '@/lib/blog';
+import { getPostBySlug, getAllPosts, getRelatedPosts } from '@/lib/blog';
 import { Header, Footer, ShareButton } from '@/components';
 import { Calendar, Clock, ArrowLeft, User, Tag } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -166,6 +166,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const canonicalUrl = `${baseUrl}/blog/${post.slug}`;
   const description = post.seoDescription?.trim() || post.excerpt || "";
   const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+  const relatedPosts = getRelatedPosts(post.slug, 3);
 
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -297,6 +298,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Footer */}
+          {relatedPosts.length > 0 && (
+            <section className="mt-14 pt-8 border-t border-white/10">
+              <h2 className="text-2xl font-bold text-white mb-6">Leia tambem</h2>
+              <div className="grid gap-4 md:grid-cols-3">
+                {relatedPosts.map((relatedPost) => (
+                  <Link
+                    key={relatedPost.slug}
+                    href={`/blog/${relatedPost.slug}`}
+                    className="card hover:border-brand-500/40 transition-colors"
+                  >
+                    <h3 className="text-base font-semibold text-white mb-2">
+                      {relatedPost.title}
+                    </h3>
+                    {relatedPost.excerpt && (
+                      <p className="text-sm text-white/60 line-clamp-3">
+                        {relatedPost.excerpt}
+                      </p>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           <footer className="mt-16 pt-8 border-t border-white/10">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <Link

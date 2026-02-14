@@ -49,9 +49,46 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.segurepix.com.br";
+  const parsedBaseUrl = new URL(rawBaseUrl);
+  if (parsedBaseUrl.host === "segurepix.com.br") {
+    parsedBaseUrl.host = "www.segurepix.com.br";
+  }
+  const baseUrl = parsedBaseUrl.toString().replace(/\/$/, "");
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "SegurePix",
+    url: baseUrl,
+    email: "contato@segurepix.com.br",
+    sameAs: [baseUrl],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SegurePix",
+    url: baseUrl,
+    inLanguage: "pt-BR",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${baseUrl}/blog?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <html lang="pt-BR" className={`${outfit.variable} ${sora.variable}`}>
       <body className="font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {children}
         <FloatingContacts />
       </body>

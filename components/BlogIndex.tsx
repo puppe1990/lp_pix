@@ -16,9 +16,14 @@ export interface BlogIndexPost {
 
 interface BlogIndexProps {
   posts: BlogIndexPost[];
+  hubLinks?: {
+    href: string;
+    title: string;
+    description: string;
+  }[];
 }
 
-export function BlogIndex({ posts }: BlogIndexProps) {
+export function BlogIndex({ posts, hubLinks = [] }: BlogIndexProps) {
   return (
     <main className="min-h-screen relative overflow-hidden">
       {/* Background Effects */}
@@ -55,6 +60,26 @@ export function BlogIndex({ posts }: BlogIndexProps) {
             para profissionais de saúde
           </p>
         </motion.div>
+
+        {hubLinks.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            {hubLinks.map((hub) => (
+              <Link
+                key={hub.href}
+                href={hub.href}
+                className="card group hover:border-brand-500/40 transition-colors"
+              >
+                <p className="text-xs uppercase tracking-wide text-brand-400 mb-2">
+                  Hub Tematico
+                </p>
+                <h2 className="text-lg font-bold text-white mb-2 group-hover:text-brand-400 transition-colors">
+                  {hub.title}
+                </h2>
+                <p className="text-sm text-white/60">{hub.description}</p>
+              </Link>
+            ))}
+          </div>
+        )}
 
         {posts.length === 0 ? (
           <motion.div
@@ -142,4 +167,3 @@ export function BlogIndex({ posts }: BlogIndexProps) {
     </main>
   );
 }
-

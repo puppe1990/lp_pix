@@ -94,6 +94,55 @@ export function getAllPostSummaries(): BlogPostSummary[] {
   return getAllPosts().map(({ content: _content, ...summary }) => summary);
 }
 
+function normalizeText(value: string): string {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+export function getPostSummariesByKeywords(keywords: string[]): BlogPostSummary[] {
+  const normalizedKeywords = keywords.map(normalizeText);
+
+  return getAllPostSummaries().filter((post) => {
+    const searchable = normalizeText(
+      [post.title, post.excerpt, post.tags?.join(" ")].filter(Boolean).join(" ")
+    );
+    return normalizedKeywords.some((keyword) => searchable.includes(keyword));
+  });
+}
+
+export function getRelatedPosts(slug: string, limit = 3): BlogPostSummary[] {
+  const allPosts = getAllPostSummaries();
+  const currentPost = allPosts.find((post) => post.slug === slug);
+
+  if (!currentPost) {
+    return [];
+  }
+
+  const currentTags = (currentPost.tags || []).map(normalizeText);
+
+  return allPosts
+    .filter((post) => post.slug !== slug)
+    .map((post) => {
+      const candidateTags = (post.tags || []).map(normalizeText);
+      const sharedTags = candidateTags.filter((tag) => currentTags.includes(tag)).length;
+
+      let score = sharedTags * 10;
+
+      const currentTitle = normalizeText(currentPost.title);
+      const candidateTitle = normalizeText(post.title);
+      const titleTokens = currentTitle.split(/\s+/).filter((token) => token.length > 4);
+      const sharedTokens = titleTokens.filter((token) => candidateTitle.includes(token)).length;
+      score += sharedTokens * 2;
+
+      return { post, score };
+    })
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.post.date > b.post.date ? -1 : 1;
+    })
+    .slice(0, limit)
+    .map(({ post }) => post);
+}
+
 function calculateReadingTime(content: string): number {
   const wordsPerMinute = 200;
   const words = content.split(/\s+/).length;

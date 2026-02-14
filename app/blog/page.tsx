@@ -21,13 +21,29 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const posts = getAllPostSummaries();
+  const hubLinks = [
+    {
+      href: "/blog/pix-privado",
+      title: "Pix Privado",
+      description: "Guias para reduzir exposicao de dados no recebimento via Pix.",
+    },
+    {
+      href: "/blog/receita-saude",
+      title: "Receita Saude",
+      description: "Conteudos praticos para recibos digitais e rotina fiscal.",
+    },
+    {
+      href: "/blog/lgpd-saude",
+      title: "LGPD na Saude",
+      description: "Boas praticas de privacidade e conformidade para consultorio.",
+    },
+  ];
 
   return (
     <>
       <Header />
-      <BlogIndex posts={posts} />
+      <BlogIndex posts={posts} hubLinks={hubLinks} />
       <Footer />
     </>
   );
 }
-
