@@ -129,23 +129,23 @@ export default function SegurancaPage() {
   const complianceStandards = [
     {
       title: "LGPD",
-      description: "Total conformidade com a Lei Geral de Proteção de Dados",
-      status: "Conforme",
+      description: "Requisito de desenho da solução e da comunicação durante a validação",
+      status: "Critério de validação",
     },
     {
       title: "ISO 27001",
-      description: "Seguindo padrões internacionais de gestão de segurança da informação",
-      status: "Em Implementação",
+      description: "Referência de boas práticas para desenho de processos e controles",
+      status: "Referência",
     },
     {
       title: "PCI DSS",
-      description: "Padrões de segurança para processamento de pagamentos",
-      status: "Conforme",
+      description: "Tema aplicável apenas se o escopo evoluir para fluxos que exijam esse padrão",
+      status: "A avaliar no MVP",
     },
     {
       title: "Banco Central",
-      description: "Conformidade com regulamentações do Banco Central para Pix",
-      status: "Conforme",
+      description: "Análise regulatória dependerá do arranjo operacional do futuro piloto/produto",
+      status: "Depende do arranjo",
     },
   ];
 
@@ -253,14 +253,15 @@ export default function SegurancaPage() {
               className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6"
             >
               <Shield className="w-4 h-4 text-brand-400" />
-              <span className="text-sm font-medium text-white/80">Segurança da Informação</span>
+              <span className="text-sm font-medium text-white/80">Segurança · Diretrizes da validação</span>
             </motion.div>
 
             <h1 className="heading-lg text-white mb-4">
-              Segurança em <span className="gradient-text">Primeiro Lugar</span>
+              Segurança como <span className="gradient-text">critério de desenho</span>
             </h1>
             <p className="text-lg text-white/60 max-w-3xl mx-auto">
-              Protegemos seus dados com as mais avançadas tecnologias e práticas de segurança da informação
+              Esta página descreve diretrizes, hipóteses e requisitos de segurança para o
+              possível piloto do SegurePix. Não representa uma operação em produção.
             </p>
           </motion.div>
 
@@ -278,21 +279,22 @@ export default function SegurancaPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Nossa Abordagem à Segurança
+                    Nossa Abordagem de Segurança (em validação)
                   </h2>
                   <div className="space-y-4 text-white/70 leading-relaxed">
                     <p>
-                      A segurança é fundamental para o SegurePix. Implementamos uma abordagem de segurança em camadas, 
-                      combinando medidas técnicas avançadas, processos organizacionais rigorosos e monitoramento contínuo 
-                      para proteger seus dados pessoais e financeiros.
+                      Segurança é um requisito central da ideia SegurePix. Nesta etapa,
+                      descrevemos uma abordagem desejada de segurança em camadas para avaliar
+                      viabilidade, riscos e prioridades antes de construir produto.
                     </p>
                     <p>
-                      Nossa infraestrutura foi projetada desde o início com segurança como prioridade, seguindo os mais 
-                      altos padrões da indústria e melhores práticas de segurança da informação.
+                      As medidas abaixo são referências de arquitetura e operação pretendidas.
+                      Elas não devem ser interpretadas como afirmações de infraestrutura já
+                      implantada em produção.
                     </p>
                     <p>
-                      Trabalhamos continuamente para identificar e mitigar riscos, mantendo nossos sistemas atualizados 
-                      e protegidos contra as mais recentes ameaças de segurança.
+                      Usamos essas diretrizes para orientar entrevistas, priorização do MVP e
+                      avaliação de parceiros/arranjos operacionais futuros.
                     </p>
                   </div>
                 </div>
@@ -309,10 +311,21 @@ export default function SegurancaPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Medidas Técnicas de Segurança
+                Diretrizes Técnicas de Segurança
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto">
-                Tecnologias e sistemas avançados que protegem seus dados em todas as camadas
+                Medidas de referência para um possível piloto, sujeitas a escopo e arranjo operacional
+              </p>
+            </div>
+
+            <div className="mb-6 rounded-2xl border border-amber-400/20 bg-amber-400/10 p-5 text-sm text-white/75">
+              <p className="font-semibold text-amber-200 mb-1">
+                Importante: diretrizes em validação
+              </p>
+              <p>
+                Os controles abaixo descrevem requisitos e referências desejadas para um futuro
+                piloto/MVP. Eles não representam, por si só, a confirmação de implementação em
+                produção nesta etapa.
               </p>
             </div>
 
@@ -337,6 +350,9 @@ export default function SegurancaPage() {
                           </h3>
                           <p className="text-white/70 mb-4 leading-relaxed">
                             {measure.description}
+                          </p>
+                          <p className="text-xs uppercase tracking-wide text-white/40 mb-3">
+                            Exemplos de controles a validar no escopo
                           </p>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {measure.details.map((detail, idx) => (
@@ -367,10 +383,10 @@ export default function SegurancaPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Medidas Organizacionais
+                Diretrizes Organizacionais
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto">
-                Processos, políticas e pessoas trabalhando juntas para garantir segurança
+                Processos e políticas que orientam a validação e o desenho de controles futuros
               </p>
             </div>
 
@@ -410,10 +426,10 @@ export default function SegurancaPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4">
-                Conformidade e Certificações
+                Requisitos e Referências de Conformidade
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto">
-                Seguimos os mais altos padrões de segurança e conformidade da indústria
+                Status de validação dos temas regulatórios e de segurança (não são certificações ativas)
               </p>
             </div>
 
@@ -542,8 +558,8 @@ export default function SegurancaPage() {
                   </h2>
                   <div className="space-y-4 text-white/70 leading-relaxed">
                     <p>
-                      Se você descobriu uma vulnerabilidade de segurança ou suspeita de atividade suspeita em sua conta, 
-                      entre em contato conosco imediatamente.
+                      Se você identificar um problema de segurança no site ou quiser reportar um
+                      risco potencial relacionado à validação, entre em contato conosco.
                     </p>
                     <div className="bg-white/5 rounded-lg p-4 border border-white/10 mt-4">
                       <p className="text-white/80 mb-2">
@@ -557,7 +573,8 @@ export default function SegurancaPage() {
                       </a>
                     </div>
                     <p className="text-sm text-white/60">
-                      Responderemos a todas as comunicações relacionadas à segurança com a máxima prioridade.
+                      Usamos esse canal para receber relatos e dúvidas de segurança durante a fase
+                      de validação.
                     </p>
                   </div>
                 </div>
@@ -578,7 +595,8 @@ export default function SegurancaPage() {
                 Dúvidas sobre Segurança?
               </h3>
               <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-                Nossa equipe de segurança está disponível para esclarecer qualquer questão sobre nossas medidas de proteção.
+                Se quiser entender como estamos tratando segurança e privacidade na fase de
+                validação, fale com a equipe ou consulte nossas páginas institucionais.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

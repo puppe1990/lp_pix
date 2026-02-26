@@ -13,10 +13,10 @@ export default function TermosDeUsoPage() {
       content: (
         <div className="space-y-4">
           <p>
-            Ao acessar e utilizar os serviços do SegurePix, você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concorda com qualquer parte destes termos, não deve utilizar nossos serviços.
+            Ao acessar e utilizar o site e os formulários de validação do SegurePix, você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concorda com qualquer parte destes termos, não deve utilizar nossos canais.
           </p>
           <p>
-            Estes termos constituem um acordo legal entre você e o SegurePix. Recomendamos que você leia atentamente todos os termos antes de utilizar nossos serviços.
+            Estes termos constituem um acordo legal entre você e o SegurePix para esta etapa de validação. Recomendamos que você leia atentamente todo o documento antes de utilizar nossos canais.
           </p>
         </div>
       ),
@@ -28,13 +28,13 @@ export default function TermosDeUsoPage() {
         <div className="space-y-4">
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>
-              <strong className="text-white">SegurePix:</strong> Plataforma de pagamentos via Pix que oferece soluções de privacidade e conformidade para profissionais de saúde.
+              <strong className="text-white">SegurePix:</strong> Site e iniciativa em validação para estudar uma solução de privacidade no recebimento via Pix para profissionais de saúde.
             </li>
             <li>
               <strong className="text-white">Usuário:</strong> Qualquer pessoa física ou jurídica que utiliza os serviços do SegurePix.
             </li>
             <li>
-              <strong className="text-white">Serviços:</strong> Todas as funcionalidades, ferramentas e recursos disponibilizados pela plataforma SegurePix.
+              <strong className="text-white">Serviços:</strong> Nesta etapa, incluem conteúdos, formulários de interesse, entrevistas e canais de contato do SegurePix.
             </li>
             <li>
               <strong className="text-white">Chave Pix:</strong> Identificador utilizado para recebimento de pagamentos via Pix, que pode ser aleatória ou personalizada.
@@ -52,38 +52,37 @@ export default function TermosDeUsoPage() {
       content: (
         <div className="space-y-4">
           <p>
-            Para utilizar os serviços do SegurePix, você deve:
+            Para utilizar os canais do SegurePix nesta fase de validação, você deve:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>Ser maior de 18 anos ou ter capacidade legal para contratar;</li>
             <li>Ser profissional de saúde ou pessoa jurídica do setor de saúde;</li>
             <li>Fornecer informações verdadeiras, precisas e atualizadas durante o cadastro;</li>
             <li>Manter a segurança de suas credenciais de acesso;</li>
-            <li>Notificar imediatamente o SegurePix sobre qualquer uso não autorizado de sua conta.</li>
+            <li>Notificar imediatamente o SegurePix sobre qualquer uso não autorizado de seus dados de contato ou canais vinculados à validação.</li>
           </ul>
           <p>
-            O SegurePix reserva-se o direito de recusar, suspender ou encerrar contas que violem estes termos ou que sejam utilizadas de forma fraudulenta ou ilegal.
+            O SegurePix reserva-se o direito de restringir acesso a formulários, entrevistas ou canais que violem estes termos ou sejam utilizados de forma fraudulenta ou ilegal.
           </p>
         </div>
       ),
     },
     {
       id: "4",
-      title: "4. Descrição dos Serviços",
+      title: "4. Descrição dos Serviços (Fase de Validação)",
       content: (
         <div className="space-y-4">
           <p>
-            O SegurePix oferece uma plataforma que permite:
+            Nesta fase, o SegurePix disponibiliza um site de validação que pode permitir:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
-            <li>Geração de chaves Pix aleatórias para proteção da privacidade;</li>
-            <li>Gerenciamento de pagamentos recebidos via Pix;</li>
-            <li>Emissão automática de recibos digitais;</li>
-            <li>Integração com sistemas de gestão de consultórios;</li>
-            <li>Ferramentas de conformidade com LGPD e códigos de ética profissional.</li>
+            <li>Cadastro em lista de espera e formulários de interesse;</li>
+            <li>Entrevistas de descoberta com profissionais de saúde;</li>
+            <li>Conteúdo educativo sobre privacidade, Pix e LGPD;</li>
+            <li>Comunicações sobre validação, pilotos e futuras funcionalidades (quando aplicável).</li>
           </ul>
           <p>
-            O SegurePix atua como intermediador de tecnologia e não é uma instituição financeira. Os pagamentos são processados diretamente pelo sistema Pix do Banco Central do Brasil.
+            Não há, nesta etapa, produto transacional em produção, intermediação de pagamentos ou integração operacional ativa com o sistema Pix.
           </p>
         </div>
       ),
@@ -101,13 +100,13 @@ export default function TermosDeUsoPage() {
             .
           </p>
           <p>
-            Ao utilizar nossos serviços, você concorda que:
+            Ao utilizar nossos canais nesta fase, você concorda que:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
-            <li>O SegurePix processará seus dados pessoais conforme necessário para prestar os serviços;</li>
-            <li>Você é responsável por obter o consentimento adequado dos pacientes para o processamento de seus dados, quando aplicável;</li>
-            <li>O SegurePix implementa medidas técnicas e organizacionais adequadas para proteger os dados pessoais;</li>
-            <li>Você deve manter a confidencialidade das informações de seus pacientes e utilizar nossos serviços de forma ética e legal.</li>
+            <li>O SegurePix processará seus dados pessoais conforme necessário para operar o site, formulários de interesse e contatos de validação;</li>
+            <li>Você não deve inserir dados de pacientes em campos que não foram projetados para isso;</li>
+            <li>O SegurePix adota medidas proporcionais à fase de validação para proteger dados pessoais;</li>
+            <li>Você deve utilizar nossos canais de forma ética e legal.</li>
           </ul>
         </div>
       ),
@@ -122,11 +121,10 @@ export default function TermosDeUsoPage() {
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>Utilizar os serviços de forma legal e ética, em conformidade com os códigos de ética profissional aplicáveis;</li>
-            <li>Manter a segurança e confidencialidade de suas credenciais de acesso;</li>
+            <li>Manter a segurança e confidencialidade de eventuais credenciais de acesso, quando aplicável;</li>
             <li>Não utilizar os serviços para atividades ilegais, fraudulentas ou que violem direitos de terceiros;</li>
             <li>Fornecer informações precisas e atualizadas;</li>
-            <li>Respeitar a privacidade e confidencialidade dos dados de seus pacientes;</li>
-            <li>Pagar todas as taxas e valores devidos conforme o plano contratado;</li>
+            <li>Respeitar a privacidade e confidencialidade dos dados que compartilhar conosco;</li>
             <li>Notificar imediatamente o SegurePix sobre qualquer violação de segurança ou uso não autorizado.</li>
           </ul>
         </div>
@@ -144,11 +142,11 @@ export default function TermosDeUsoPage() {
             <li>Interrupções, falhas ou indisponibilidades temporárias dos serviços devido a manutenção, atualizações ou causas fora de nosso controle;</li>
             <li>Perdas ou danos decorrentes do uso inadequado dos serviços pelo usuário;</li>
             <li>Problemas relacionados ao sistema Pix do Banco Central ou instituições financeiras;</li>
-            <li>Decisões tomadas pelo usuário com base em informações fornecidas pela plataforma;</li>
+            <li>Decisões tomadas pelo usuário com base em informações fornecidas pelo site, conteúdos ou materiais de validação;</li>
             <li>Danos indiretos, lucros cessantes ou perda de dados, exceto quando decorrentes de dolo ou culpa grave do SegurePix.</li>
           </ul>
           <p>
-            O SegurePix se esforça para manter os serviços disponíveis e funcionando corretamente, mas não garante disponibilidade ininterrupta ou livre de erros.
+            O SegurePix se esforça para manter o site e os formulários disponíveis, mas não garante disponibilidade ininterrupta ou livre de erros.
           </p>
         </div>
       ),
@@ -175,23 +173,14 @@ export default function TermosDeUsoPage() {
     },
     {
       id: "9",
-      title: "9. Taxas e Pagamentos",
+      title: "9. Taxas e Pagamentos (Quando Aplicável)",
       content: (
         <div className="space-y-4">
           <p>
-            O uso dos serviços do SegurePix pode estar sujeito ao pagamento de taxas conforme o plano contratado. As taxas serão informadas claramente antes da contratação.
+            Nesta fase de validação, não há cobrança pelo uso do site e dos formulários de interesse. Caso o SegurePix evolua para um piloto pago ou produto comercial, condições e taxas serão apresentadas em documento próprio antes de qualquer contratação.
           </p>
           <p>
-            Você concorda em:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-white/70">
-            <li>Pagar todas as taxas aplicáveis no prazo estabelecido;</li>
-            <li>Manter informações de pagamento atualizadas e válidas;</li>
-            <li>Autorizar o débito automático quando aplicável;</li>
-            <li>Reconhecer que as taxas podem ser alteradas mediante aviso prévio de 30 dias.</li>
-          </ul>
-          <p>
-            O SegurePix reserva-se o direito de suspender ou encerrar serviços em caso de inadimplência.
+            Se houver piloto pago no futuro, termos comerciais específicos prevalecerão sobre esta seção para assuntos de cobrança, faturamento e inadimplência.
           </p>
         </div>
       ),
@@ -202,36 +191,36 @@ export default function TermosDeUsoPage() {
       content: (
         <div className="space-y-4">
           <p>
-            O SegurePix reserva-se o direito de modificar, suspender ou descontinuar qualquer aspecto dos serviços a qualquer momento, com ou sem aviso prévio.
+            O SegurePix reserva-se o direito de modificar, suspender ou descontinuar conteúdos, formulários, entrevistas e outros elementos da validação a qualquer momento.
           </p>
           <p>
-            Estes Termos de Uso podem ser atualizados periodicamente. Alterações significativas serão comunicadas aos usuários através dos canais de comunicação da plataforma ou por e-mail.
+            Estes Termos de Uso podem ser atualizados periodicamente. Alterações significativas serão comunicadas aos usuários através dos canais de comunicação do site ou por e-mail.
           </p>
           <p>
-            O uso continuado dos serviços após a publicação de alterações constitui aceitação dos novos termos. Se você não concordar com as alterações, deve encerrar sua conta e deixar de utilizar os serviços.
+            O uso continuado dos canais após a publicação de alterações constitui aceitação dos novos termos. Se você não concordar com as alterações, deve deixar de utilizar nossos canais.
           </p>
         </div>
       ),
     },
     {
       id: "11",
-      title: "11. Encerramento de Conta",
+      title: "11. Encerramento de Acesso e Participação",
       content: (
         <div className="space-y-4">
           <p>
-            Você pode encerrar sua conta a qualquer momento através das configurações da plataforma ou entrando em contato com nosso suporte.
+            Você pode solicitar a interrupção de contatos e participação na validação a qualquer momento entrando em contato com nosso suporte.
           </p>
           <p>
-            O SegurePix pode suspender ou encerrar sua conta imediatamente, sem aviso prévio, se:
+            O SegurePix pode suspender ou encerrar seu acesso a formulários, entrevistas e canais imediatamente, sem aviso prévio, se:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>Você violar estes Termos de Uso;</li>
             <li>Você utilizar os serviços de forma fraudulenta ou ilegal;</li>
             <li>Houver solicitação de autoridades competentes;</li>
-            <li>Você estiver inadimplente com pagamentos devidos.</li>
+            <li>Houver risco de uso abusivo, fraudulento ou incompatível com a finalidade da validação.</li>
           </ul>
           <p>
-            Após o encerramento, você perderá acesso aos serviços e dados da conta, exceto quando a retenção seja exigida por lei.
+            Após o encerramento, você poderá perder acesso a canais e comunicações da validação, sem prejuízo da retenção de dados quando exigida por lei.
           </p>
         </div>
       ),
@@ -242,11 +231,11 @@ export default function TermosDeUsoPage() {
       content: (
         <div className="space-y-4">
           <p>
-            O SegurePix opera em conformidade com:
+            O SegurePix busca alinhar sua validação e futura operação aos seguintes marcos legais, quando aplicáveis:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018);</li>
-            <li>Regulamentações do Banco Central do Brasil sobre o sistema Pix;</li>
+            <li>Regulamentações do Banco Central do Brasil sobre o sistema Pix (se e quando houver produto/arranjo operacional aplicável);</li>
             <li>Código de Defesa do Consumidor;</li>
             <li>Marco Civil da Internet;</li>
             <li>Demais legislações aplicáveis.</li>
@@ -290,7 +279,7 @@ export default function TermosDeUsoPage() {
               <strong className="text-white">Cessão:</strong> Você não pode ceder ou transferir seus direitos ou obrigações sem consentimento prévio do SegurePix.
             </li>
             <li>
-              <strong className="text-white">Comunicação:</strong> As comunicações oficiais serão enviadas para o e-mail cadastrado em sua conta.
+              <strong className="text-white">Comunicação:</strong> As comunicações oficiais poderão ser enviadas para o e-mail informado por você em formulários do site.
             </li>
           </ul>
         </div>
@@ -352,7 +341,7 @@ export default function TermosDeUsoPage() {
               className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6"
             >
               <FileText className="w-4 h-4 text-brand-400" />
-              <span className="text-sm font-medium text-white/80">Documento Legal</span>
+              <span className="text-sm font-medium text-white/80">Documento Legal · Fase de validação</span>
             </motion.div>
 
             <h1 className="heading-lg text-white mb-4">
@@ -382,9 +371,9 @@ export default function TermosDeUsoPage() {
                     Importante
                   </h3>
                   <p className="text-white/70 leading-relaxed">
-                    Estes Termos de Uso estabelecem as condições de utilização dos serviços do SegurePix. 
-                    Recomendamos que você leia atentamente todo o documento. Ao utilizar nossos serviços, 
-                    você concorda em estar vinculado a estes termos. Em caso de dúvidas, entre em contato 
+                    Estes Termos de Uso estabelecem as condições de utilização do site e dos canais de validação do SegurePix.
+                    Não descrevem um produto transacional em operação. Recomendamos que você leia atentamente todo o documento.
+                    Ao utilizar nossos canais, você concorda em estar vinculado a estes termos. Em caso de dúvidas, entre em contato
                     conosco através dos canais indicados.
                   </p>
                 </div>
@@ -447,4 +436,3 @@ export default function TermosDeUsoPage() {
     </>
   );
 }
-

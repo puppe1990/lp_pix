@@ -13,13 +13,13 @@ export default function PoliticaDePrivacidadePage() {
       content: (
         <div className="space-y-4">
           <p>
-            O SegurePix está comprometido com a proteção da privacidade e dos dados pessoais de nossos usuários e pacientes. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos suas informações pessoais em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+            O SegurePix está comprometido com a proteção da privacidade e dos dados pessoais de visitantes e interessados na validação da ideia. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos suas informações pessoais em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
           </p>
           <p>
-            Ao utilizar nossos serviços, você concorda com as práticas descritas nesta política. Recomendamos que você leia atentamente este documento para entender como tratamos seus dados pessoais.
+            Ao utilizar nosso site e formulários de validação, você concorda com as práticas descritas nesta política. Recomendamos que você leia atentamente este documento para entender como tratamos seus dados pessoais.
           </p>
           <p>
-            Esta política se aplica a todos os usuários da plataforma SegurePix, incluindo profissionais de saúde, pacientes e visitantes do site.
+            Esta política se aplica principalmente a visitantes do site, pessoas que preenchem formulários de interesse e participantes de entrevistas de validação. Se o SegurePix evoluir para produto em produção, esta política poderá ser atualizada para refletir novas operações de tratamento.
           </p>
         </div>
       ),
@@ -62,26 +62,24 @@ export default function PoliticaDePrivacidadePage() {
       content: (
         <div className="space-y-4">
           <p>
-            Coletamos diferentes tipos de dados pessoais, dependendo de como você interage com nossos serviços:
+            Coletamos diferentes tipos de dados pessoais, dependendo de como você interage com nosso site e com os canais de validação:
           </p>
           
           <div className="space-y-4 mt-4">
             <div>
-              <h4 className="font-semibold text-white mb-2">3.1. Dados de Cadastro e Conta</h4>
+              <h4 className="font-semibold text-white mb-2">3.1. Dados de Formulário e Contato</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
                 <li>Nome completo</li>
                 <li>E-mail</li>
                 <li>Telefone</li>
-                <li>CPF ou CNPJ</li>
                 <li>Profissão/Área de atuação</li>
-                <li>Número de registro profissional (quando aplicável)</li>
-                <li>Endereço</li>
-                <li>Dados bancários para recebimento (quando necessário)</li>
+                <li>Informações sobre rotina de recebimento via Pix (quando fornecidas)</li>
+                <li>Respostas de qualificação em formulários e entrevistas</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-2">3.2. Dados de Uso da Plataforma</h4>
+              <h4 className="font-semibold text-white mb-2">3.2. Dados de Uso do Site</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
                 <li>Logs de acesso e atividade</li>
                 <li>Informações sobre dispositivos utilizados</li>
@@ -92,25 +90,23 @@ export default function PoliticaDePrivacidadePage() {
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-2">3.3. Dados de Transações</h4>
+              <h4 className="font-semibold text-white mb-2">3.3. Dados de Validação (quando fornecidos)</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
-                <li>Histórico de pagamentos recebidos</li>
-                <li>Valores e datas de transações</li>
-                <li>Chaves Pix utilizadas</li>
-                <li>Informações sobre pagadores (quando necessário para emissão de recibos)</li>
+                <li>Faixas de volume de recebimento via Pix</li>
+                <li>Dores relatadas sobre privacidade, operação e organização</li>
+                <li>Preferências sobre formato de piloto/MVP</li>
+                <li>Disponibilidade para entrevista</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-2">3.4. Dados de Pacientes (quando fornecidos pelo profissional)</h4>
+              <h4 className="font-semibold text-white mb-2">3.4. Dados de Terceiros/Pacientes</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
-                <li>Nome do paciente (para emissão de recibos)</li>
-                <li>CPF do paciente (quando necessário)</li>
-                <li>Informações sobre consultas e serviços prestados</li>
-                <li>Valores cobrados</li>
+                <li>Não solicitamos dados de pacientes nos formulários públicos desta fase de validação.</li>
+                <li>Se houver compartilhamento indevido em campos abertos, trataremos apenas para triagem, segurança e descarte/regularização conforme aplicável.</li>
               </ul>
               <p className="text-white/60 text-sm mt-2 ml-4">
-                <strong>Importante:</strong> O profissional de saúde é responsável por obter o consentimento adequado dos pacientes antes de inserir seus dados na plataforma.
+                <strong>Importante:</strong> Evite inserir dados de pacientes em campos de formulário, mensagens ou entrevistas de validação.
               </p>
             </div>
           </div>
@@ -125,16 +121,16 @@ export default function PoliticaDePrivacidadePage() {
           <p>Coletamos dados pessoais através das seguintes formas:</p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>
-              <strong className="text-white">Fornecimento Direto:</strong> Quando você se cadastra, preenche formulários ou utiliza nossos serviços.
+              <strong className="text-white">Fornecimento Direto:</strong> Quando você preenche formulários, entra em contato conosco ou participa de entrevistas de validação.
             </li>
             <li>
-              <strong className="text-white">Uso da Plataforma:</strong> Dados coletados automaticamente durante o uso de nossos serviços.
+              <strong className="text-white">Uso do Site:</strong> Dados coletados automaticamente durante a navegação em nosso site.
             </li>
             <li>
               <strong className="text-white">Cookies e Tecnologias Similares:</strong> Utilizamos cookies e tecnologias similares para melhorar sua experiência e coletar informações sobre como você utiliza nosso site.
             </li>
             <li>
-              <strong className="text-white">Integrações:</strong> Quando você conecta sua conta a serviços de terceiros (com sua autorização).
+              <strong className="text-white">Integrações:</strong> Se houver integrações futuras, com sua autorização e conforme atualização desta política.
             </li>
             <li>
               <strong className="text-white">Comunicações:</strong> Informações fornecidas quando você entra em contato conosco por e-mail, telefone ou outros canais.
@@ -152,13 +148,12 @@ export default function PoliticaDePrivacidadePage() {
           
           <div className="space-y-4 mt-4">
             <div>
-              <h4 className="font-semibold text-white mb-2">5.1. Prestação de Serviços</h4>
+              <h4 className="font-semibold text-white mb-2">5.1. Operação do Site e da Validação</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
-                <li>Gerenciar sua conta e acesso à plataforma</li>
-                <li>Processar pagamentos e transações</li>
-                <li>Gerar chaves Pix aleatórias</li>
-                <li>Emitir recibos digitais</li>
-                <li>Fornecer suporte técnico</li>
+                <li>Receber e organizar cadastros de interesse</li>
+                <li>Entrar em contato para entrevistas de validação</li>
+                <li>Priorizar leads por perfil, dor e urgência</li>
+                <li>Fornecer suporte aos formulários e canais do site</li>
               </ul>
             </div>
 
@@ -175,8 +170,8 @@ export default function PoliticaDePrivacidadePage() {
             <div>
               <h4 className="font-semibold text-white mb-2">5.3. Melhoria dos Serviços</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
-                <li>Analisar uso da plataforma para melhorias</li>
-                <li>Desenvolver novos recursos e funcionalidades</li>
+                <li>Analisar uso do site para melhorias</li>
+                <li>Definir prioridades de MVP/piloto e novos recursos</li>
                 <li>Realizar pesquisas e análises estatísticas</li>
                 <li>Prevenir fraudes e garantir segurança</li>
               </ul>
@@ -185,7 +180,7 @@ export default function PoliticaDePrivacidadePage() {
             <div>
               <h4 className="font-semibold text-white mb-2">5.4. Comunicação</h4>
               <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
-                <li>Enviar notificações sobre sua conta e transações</li>
+                <li>Enviar comunicações sobre a validação, entrevistas e possíveis convites de piloto</li>
                 <li>Responder a suas solicitações e dúvidas</li>
                 <li>Enviar informações sobre atualizações e novos recursos (com seu consentimento)</li>
                 <li>Enviar comunicações de marketing (apenas com consentimento explícito)</li>
@@ -239,7 +234,7 @@ export default function PoliticaDePrivacidadePage() {
             <div>
               <h4 className="font-semibold text-white mb-2">7.1. Prestadores de Serviços</h4>
               <p className="text-white/70 ml-4">
-                Podemos compartilhar dados com prestadores de serviços que nos auxiliam na operação da plataforma (hospedagem, processamento de pagamentos, análise de dados), sempre sob rigorosos acordos de confidencialidade e segurança.
+                Podemos compartilhar dados com prestadores de serviços que nos auxiliam na operação do site e da validação (hospedagem, formulários, analytics, comunicação), sempre sob acordos de confidencialidade e segurança, quando aplicável.
               </p>
             </div>
 
@@ -253,7 +248,7 @@ export default function PoliticaDePrivacidadePage() {
             <div>
               <h4 className="font-semibold text-white mb-2">7.3. Instituições Financeiras</h4>
               <p className="text-white/70 ml-4">
-                Informações necessárias para processamento de pagamentos via Pix, conforme regulamentação do Banco Central.
+                Se houver produto/piloto com fluxo de pagamento no futuro, esta hipótese de compartilhamento poderá ser aplicável e será detalhada em atualização desta política.
               </p>
             </div>
 
@@ -279,7 +274,7 @@ export default function PoliticaDePrivacidadePage() {
       content: (
         <div className="space-y-4">
           <p>
-            Implementamos medidas técnicas e organizacionais adequadas para proteger seus dados pessoais contra acesso não autorizado, alteração, divulgação ou destruição:
+            Adotamos medidas técnicas e organizacionais proporcionais à fase de validação para proteger seus dados pessoais contra acesso não autorizado, alteração, divulgação ou destruição:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>
@@ -317,13 +312,13 @@ export default function PoliticaDePrivacidadePage() {
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>
-              <strong className="text-white">Dados de Conta:</strong> Mantidos enquanto sua conta estiver ativa e por período adicional conforme exigências legais.
+              <strong className="text-white">Dados de Formulário/Contato:</strong> Mantidos pelo tempo necessário para conduzir a validação e por período adicional quando exigido por lei.
             </li>
             <li>
-              <strong className="text-white">Dados de Transações:</strong> Retidos conforme exigências legais e regulatórias (geralmente 5 anos).
+              <strong className="text-white">Dados de Validação:</strong> Mantidos enquanto úteis para análise da ideia, entrevistas e decisões de MVP/piloto.
             </li>
             <li>
-              <strong className="text-white">Dados de Pacientes:</strong> Retidos conforme exigências legais do setor de saúde e códigos de ética profissional.
+              <strong className="text-white">Dados de Terceiros compartilhados indevidamente:</strong> Tratados para triagem/segurança e removidos ou regularizados conforme aplicável.
             </li>
             <li>
               <strong className="text-white">Dados de Marketing:</strong> Mantidos até você revogar seu consentimento ou solicitar exclusão.
@@ -420,11 +415,11 @@ export default function PoliticaDePrivacidadePage() {
       content: (
         <div className="space-y-4">
           <p>
-            Utilizamos cookies e tecnologias similares para melhorar sua experiência, analisar o uso da plataforma e personalizar conteúdo. Os tipos de cookies que utilizamos incluem:
+            Utilizamos cookies e tecnologias similares para melhorar sua experiência, analisar o uso do site e personalizar conteúdo. Os tipos de cookies que utilizamos incluem:
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>
-              <strong className="text-white">Cookies Essenciais:</strong> Necessários para o funcionamento básico da plataforma.
+              <strong className="text-white">Cookies Essenciais:</strong> Necessários para o funcionamento básico do site e dos formulários.
             </li>
             <li>
               <strong className="text-white">Cookies de Desempenho:</strong> Coletam informações sobre como você utiliza nosso site para melhorias.
@@ -437,7 +432,7 @@ export default function PoliticaDePrivacidadePage() {
             </li>
           </ul>
           <p>
-            Você pode gerenciar suas preferências de cookies através das configurações do seu navegador. Note que desabilitar certos cookies pode afetar a funcionalidade da plataforma.
+            Você pode gerenciar suas preferências de cookies através das configurações do seu navegador. Note que desabilitar certos cookies pode afetar funcionalidades do site.
           </p>
         </div>
       ),
@@ -465,7 +460,7 @@ export default function PoliticaDePrivacidadePage() {
       content: (
         <div className="space-y-4">
           <p>
-            Nossos serviços são destinados a profissionais de saúde e pessoas maiores de 18 anos. Não coletamos intencionalmente dados pessoais de menores de idade.
+            Nosso site e canais de validação são destinados a profissionais de saúde e pessoas maiores de 18 anos. Não coletamos intencionalmente dados pessoais de menores de idade.
           </p>
           <p>
             Se tomarmos conhecimento de que coletamos dados de menores sem o consentimento adequado dos responsáveis, tomaremos medidas imediatas para eliminar essas informações.
@@ -486,11 +481,11 @@ export default function PoliticaDePrivacidadePage() {
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
             <li>Notificação por e-mail para o endereço cadastrado;</li>
-            <li>Aviso destacado na plataforma;</li>
+                <li>Aviso destacado no site;</li>
             <li>Atualização da data de “Última atualização” no topo desta política.</li>
           </ul>
           <p>
-            Recomendamos que você revise esta política periodicamente. O uso continuado de nossos serviços após alterações constitui aceitação da política atualizada.
+            Recomendamos que você revise esta política periodicamente. O uso continuado do site e dos canais de validação após alterações constitui aceitação da política atualizada.
           </p>
         </div>
       ),
@@ -501,16 +496,16 @@ export default function PoliticaDePrivacidadePage() {
       content: (
         <div className="space-y-4">
           <p>
-            O SegurePix possui um Encarregado de Proteção de Dados (DPO) responsável por:
+            Durante a fase de validação, mantemos canais de privacidade para receber solicitações e orientações relacionadas ao tratamento de dados. Se houver evolução para produto em produção, a estrutura de governança e a indicação formal de encarregado (DPO), quando aplicável, serão atualizadas nesta política.
           </p>
           <ul className="list-disc list-inside space-y-2 text-white/70">
-            <li>Receber comunicações dos titulares e da Autoridade Nacional de Proteção de Dados (ANPD);</li>
-            <li>Orientar funcionários e contratados sobre práticas de proteção de dados;</li>
-            <li>Executar outras atribuições determinadas pelo controlador ou previstas em regulamentação.</li>
+            <li>Receber comunicações dos titulares relacionadas à fase de validação;</li>
+            <li>Orientar a equipe sobre práticas de proteção de dados aplicáveis ao site e aos formulários;</li>
+            <li>Registrar demandas e preparar a evolução de governança de privacidade, quando aplicável.</li>
           </ul>
           <div className="bg-white/5 rounded-lg p-4 border border-white/10 mt-4">
             <p className="text-white/80">
-              <strong>Contato do DPO:</strong>
+              <strong>Contato de Privacidade (fase de validação):</strong>
             </p>
             <ul className="list-none space-y-2 text-white/70 mt-2">
               <li>
@@ -603,7 +598,7 @@ export default function PoliticaDePrivacidadePage() {
               className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6"
             >
               <Lock className="w-4 h-4 text-brand-400" />
-              <span className="text-sm font-medium text-white/80">Proteção de Dados</span>
+              <span className="text-sm font-medium text-white/80">Proteção de Dados · Fase de validação</span>
             </motion.div>
 
             <h1 className="heading-lg text-white mb-4">
@@ -633,9 +628,9 @@ export default function PoliticaDePrivacidadePage() {
                     Compromisso com sua Privacidade
                   </h3>
                   <p className="text-white/70 leading-relaxed">
-                    Esta Política de Privacidade descreve como o SegurePix coleta, utiliza, armazena e protege seus dados pessoais, 
-                    em total conformidade com a Lei Geral de Proteção de Dados (LGPD). Sua privacidade é nossa prioridade, e estamos 
-                    comprometidos em ser transparentes sobre nossas práticas de proteção de dados.
+                    Esta Política de Privacidade descreve como o SegurePix coleta, utiliza, armazena e protege seus dados pessoais
+                    na fase de validação da ideia, com referência à LGPD e compromisso de transparência sobre nossas práticas de
+                    tratamento de dados.
                   </p>
                 </div>
               </div>
@@ -696,14 +691,14 @@ export default function PoliticaDePrivacidadePage() {
                 Dúvidas sobre Privacidade?
               </h3>
               <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-                Nossa equipe de privacidade está pronta para esclarecer qualquer questão sobre o tratamento de seus dados pessoais.
+                Nosso canal de privacidade está disponível para esclarecer questões sobre o tratamento de dados nesta fase de validação.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:privacidade@segurepix.com.br"
                   className="btn-secondary inline-flex items-center gap-2"
                 >
-                  Falar com DPO
+                  Falar com Privacidade
                 </a>
                 <Link
                   href="/termos-de-uso"

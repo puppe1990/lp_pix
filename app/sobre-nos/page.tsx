@@ -10,25 +10,25 @@ export default function SobreNosPage() {
       icon: Shield,
       title: "Privacidade em Primeiro Lugar",
       description:
-        "Acreditamos que seus dados pessoais devem permanecer privados. Desenvolvemos soluções que protegem sua identidade sem comprometer a praticidade.",
+        "Acreditamos que seus dados pessoais devem permanecer privados. Estamos validando uma abordagem que reduza exposição de dados sem comprometer a praticidade.",
     },
     {
       icon: Target,
       title: "Foco no Profissional de Saúde",
       description:
-        "Entendemos as necessidades específicas de psicólogos, dentistas e outros profissionais de saúde. Nossas soluções são feitas sob medida para vocês.",
+        "Estamos estudando as necessidades específicas de psicólogos, dentistas e outros profissionais de saúde para definir um piloto com foco real no setor.",
     },
     {
       icon: Heart,
       title: "Conformidade e Ética",
       description:
-        "Respeitamos rigorosamente a LGPD, os códigos de ética profissional e todas as regulamentações do setor de saúde.",
+        "Tratamos LGPD e códigos de ética profissional como requisitos de desenho da ideia, com linguagem e promessas compatíveis com o estágio de validação.",
     },
     {
       icon: Zap,
       title: "Inovação Contínua",
       description:
-        "Estamos sempre evoluindo para oferecer as melhores soluções de pagamento privado e seguro para profissionais de saúde.",
+        "Estamos testando hipóteses e aprendizados com profissionais de saúde antes de decidir o formato do MVP/piloto.",
     },
   ];
 
@@ -37,7 +37,7 @@ export default function SobreNosPage() {
       name: "Equipe SegurePix",
       role: "Especialistas em Privacidade e Pagamentos",
       description:
-        "Nossa equipe é formada por profissionais apaixonados por privacidade, segurança de dados e inovação financeira. Combinamos expertise técnica com profundo entendimento das necessidades dos profissionais de saúde.",
+        "Equipe em formação focada em privacidade, segurança de dados e desenho de fluxos de pagamento. Estamos combinando pesquisa com profissionais de saúde e validação de mensagem antes de construir produto.",
     },
   ];
 
@@ -67,7 +67,7 @@ export default function SobreNosPage() {
               className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6"
             >
               <Shield className="w-4 h-4 text-brand-400" />
-              <span className="text-sm font-medium text-white/80">Sobre Nós</span>
+              <span className="text-sm font-medium text-white/80">Sobre Nós · Ideia em validação</span>
             </motion.div>
 
             <h1 className="heading-lg text-white mb-6">
@@ -77,11 +77,10 @@ export default function SobreNosPage() {
               Profissionais de Saúde
             </h1>
             <p className="text-lg text-white/60 max-w-3xl mx-auto leading-relaxed">
-              O SegurePix nasceu da necessidade de oferecer uma solução de pagamentos
-              que respeita a privacidade e a confidencialidade essenciais para
-              profissionais de saúde. Sabemos que receber pagamentos via Pix não deveria
-              significar expor seus dados pessoais ou comprometer a relação de confiança
-              com seus pacientes.
+              O SegurePix nasceu como uma hipótese de produto para reduzir a exposição de
+              dados no recebimento via Pix por profissionais de saúde. Nesta etapa, estamos
+              validando a dor, a urgência e o formato de um possível piloto antes de
+              construir uma solução em produção.
             </p>
           </motion.div>
 
@@ -100,10 +99,11 @@ export default function SobreNosPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-3">Nossa Missão</h2>
                   <p className="text-white/70 leading-relaxed">
-                    Democratizar o acesso a pagamentos seguros e privados para
-                    profissionais de saúde, permitindo que vocês se concentrem no que
-                    fazem de melhor: cuidar das pessoas. Acreditamos que tecnologia e
-                    privacidade podem e devem caminhar juntas.
+                    Validar uma forma prática de reduzir exposição de dados no recebimento
+                    via Pix para profissionais de saúde, sem prometer funcionalidades que
+                    ainda não existem. Acreditamos que tecnologia e privacidade podem e
+                    devem caminhar juntas, mas o formato final do produto depende da
+                    pesquisa em andamento.
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function SobreNosPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Por Que Escolher o SegurePix?
+                    Por Que Participar da Validação do SegurePix?
                   </h2>
                   <div className="space-y-4 text-white/70">
                     <p className="leading-relaxed">
@@ -174,17 +174,15 @@ export default function SobreNosPage() {
                       não é apenas uma preferência, mas uma obrigação ética e legal.
                     </p>
                     <p className="leading-relaxed">
-                      O SegurePix foi desenvolvido especificamente para atender às
-                      necessidades únicas do setor de saúde. Nossas soluções garantem
-                      que você possa receber pagamentos de forma prática e segura, sem
-                      comprometer a confidencialidade dos seus dados ou dos seus
-                      pacientes.
+                      O SegurePix está sendo desenhado a partir das necessidades do setor
+                      de saúde. Nesta fase, coletamos sinais de dor, rotina e urgência
+                      para entender se faz sentido evoluir para um piloto focado em
+                      privacidade operacional no Pix.
                     </p>
                     <p className="leading-relaxed">
-                      Trabalhamos em conformidade total com a LGPD, os códigos de ética
-                      profissional e as melhores práticas de segurança da informação.
-                      Sua privacidade e a dos seus pacientes são nossa prioridade
-                      absoluta.
+                      LGPD, códigos de ética e boas práticas de segurança são critérios de
+                      avaliação desta validação. Evitamos claims de "conformidade total"
+                      nesta etapa porque ainda não há produto em produção.
                     </p>
                   </div>
                 </div>
@@ -244,25 +242,25 @@ export default function SobreNosPage() {
           >
             <div className="card p-8 md:p-12 bg-gradient-to-br from-brand-500/10 to-midnight-800/50 border border-brand-500/20">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Pronto para Proteger Sua Privacidade?
+                Quer participar da validação?
               </h2>
               <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                Junte-se aos profissionais de saúde que já confiam no SegurePix para
-                receber pagamentos de forma segura e privada.
+                Entre na lista de espera ou participe de uma entrevista curta para ajudar
+                a definir se o SegurePix deve virar um piloto.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/interesse?plano=geral&source=sobre_nos"
+                  href="/interesse?plano=geral&source=sobre_nos_cta&campaign=validacao_14d&intent=privacidade_pix"
                   className="btn-primary group"
                 >
-                  Começar Grátis
+                  Entrar na Lista de Espera
                   <Zap className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
                 </a>
                 <a
-                  href="mailto:contato@segurepix.com.br"
+                  href="/interesse?plano=demo&source=sobre_nos_interview&campaign=validacao_14d&intent=privacidade_pix"
                   className="btn-secondary"
                 >
-                  Falar com a Equipe
+                  Participar de Entrevista
                 </a>
               </div>
             </div>
@@ -273,4 +271,3 @@ export default function SobreNosPage() {
     </>
   );
 }
-
