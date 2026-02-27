@@ -181,7 +181,7 @@ export default function SobreNosPage() {
                     </p>
                     <p className="leading-relaxed">
                       LGPD, códigos de ética e boas práticas de segurança são critérios de
-                      avaliação desta validação. Evitamos claims de "conformidade total"
+                      avaliação desta validação. Evitamos claims de &quot;conformidade total&quot;
                       nesta etapa porque ainda não há produto em produção.
                     </p>
                   </div>
