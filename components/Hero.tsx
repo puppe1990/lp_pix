@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
 import {
   Shield,
   Lock,
@@ -25,6 +26,34 @@ const benefits = [
 ];
 
 export function Hero() {
+  const [ctaVariant, setCtaVariant] = useState<"A" | "B">("A");
+
+  useEffect(() => {
+    const savedVariant = window.localStorage.getItem("hero_cta_variant");
+    if (savedVariant === "A" || savedVariant === "B") {
+      setCtaVariant(savedVariant);
+      return;
+    }
+
+    const nextVariant = Math.random() < 0.5 ? "A" : "B";
+    window.localStorage.setItem("hero_cta_variant", nextVariant);
+    setCtaVariant(nextVariant);
+  }, []);
+
+  const ctaConfig = useMemo(() => {
+    if (ctaVariant === "B") {
+      return {
+        label: "Quero Participar do Piloto",
+        source: "hero_cta_b",
+      };
+    }
+
+    return {
+      label: "Entrar na Lista de Espera",
+      source: "hero_cta_a",
+    };
+  }, [ctaVariant]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effects */}
@@ -126,20 +155,21 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
-            href="/interesse?plano=waitlist&source=hero_cta&campaign=validacao_14d&intent=privacidade_pix" 
+            href={`/interesse?plano=waitlist&source=${ctaConfig.source}&campaign=validacao_14d&intent=privacidade_pix&cta_variant=${ctaVariant}`}
             onClick={() =>
               trackEvent("cta_click", {
                 page: "home",
                 section: "hero",
-                cta_label: "Entrar na Lista de Espera",
+                cta_label: ctaConfig.label,
                 target_url: "/interesse",
-                source: "hero_cta",
+                source: ctaConfig.source,
                 intent: "privacidade_pix",
+                cta_variant: ctaVariant,
               })
             }
             className="btn-primary text-lg px-8 py-4 group"
           >
-            Entrar na Lista de Espera
+            {ctaConfig.label}
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -152,6 +182,7 @@ export function Hero() {
                 target_url: "/interesse",
                 source: "hero_interview",
                 intent: "entrevista",
+                cta_variant: ctaVariant,
               })
             }
             className="btn-secondary text-lg px-8 py-4"
@@ -167,18 +198,26 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 pt-8 border-t border-white/10"
         >
-          <p className="text-sm text-white/40 mb-4">Ideal para profissionais de</p>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {["Psicologia", "Odontologia", "Fisioterapia", "Medicina", "Nutrição"].map(
-              (profession) => (
-                <span
-                  key={profession}
-                  className="text-white/50 font-medium hover:text-white/70 transition-colors"
-                >
-                  {profession}
-                </span>
-              )
-            )}
+          <p className="text-sm text-white/40 mb-4">Indicadores de validação (atualização semanal)</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <div className="text-sm text-white/50 mb-1">Entrevistas na semana</div>
+              <div className="text-2xl font-bold text-brand-300">
+                {process.env.NEXT_PUBLIC_VALIDATION_INTERVIEWS_WEEK || "Atualizando"}
+              </div>
+            </div>
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <div className="text-sm text-white/50 mb-1">Entrevistas realizadas</div>
+              <div className="text-2xl font-bold text-brand-300">
+                {process.env.NEXT_PUBLIC_VALIDATION_INTERVIEWS_TOTAL || "Atualizando"}
+              </div>
+            </div>
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+              <div className="text-sm text-white/50 mb-1">Submit rate /interesse</div>
+              <div className="text-2xl font-bold text-brand-300">
+                {process.env.NEXT_PUBLIC_VALIDATION_SUBMIT_RATE || "Atualizando"}
+              </div>
+            </div>
           </div>
         </motion.div>
 

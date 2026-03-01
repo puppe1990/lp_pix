@@ -3,10 +3,7 @@ import {
   Header,
   Hero,
   Problem,
-  Solution,
   HowItWorks,
-  Pricing,
-  Testimonials,
   FAQ,
   CTA,
   Footer,
@@ -63,10 +60,7 @@ export default function Home() {
         />
         <Hero />
         <Problem />
-        <Solution />
         <HowItWorks />
-        <Pricing />
-        <Testimonials />
         <FAQ />
         <CTA />
       </main>

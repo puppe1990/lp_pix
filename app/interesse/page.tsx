@@ -99,6 +99,7 @@ function InteresseContent() {
   const campaign = searchParams.get("campaign") || "";
   const contentSlug = searchParams.get("content_slug") || "";
   const intent = searchParams.get("intent") || "";
+  const ctaVariant = searchParams.get("cta_variant") || "";
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -125,8 +126,9 @@ function InteresseContent() {
       content_slug: contentSlug,
       intent,
       plano_param: planoParam,
+      cta_variant: ctaVariant,
     });
-  }, [source, campaign, contentSlug, intent, planoParam]);
+  }, [source, campaign, contentSlug, intent, planoParam, ctaVariant]);
 
   const handleFormStart = () => {
     if (formStarted) return;
@@ -137,6 +139,7 @@ function InteresseContent() {
       content_slug: contentSlug,
       intent,
       plano_param: planoParam,
+      cta_variant: ctaVariant,
     });
   };
 
@@ -153,6 +156,7 @@ function InteresseContent() {
       trackEvent("interesse_form_error", {
         source,
         error_type: "missing_whatsapp_for_interview",
+        cta_variant: ctaVariant,
       });
       return;
     }
@@ -173,6 +177,7 @@ function InteresseContent() {
       content_slug: contentSlug,
       intent,
       plano_param: planoParam,
+      cta_variant: ctaVariant,
     };
 
     const leadScore = calculateLeadScore(payload);
@@ -198,6 +203,7 @@ function InteresseContent() {
         trackEvent("interesse_form_error", {
           source,
           error_type: "submit_failed",
+          cta_variant: ctaVariant,
         });
         throw new Error("Erro ao enviar formulário");
       }
@@ -211,6 +217,7 @@ function InteresseContent() {
         dor_principal: dorPrincipal,
         volume_pix_mensal: volumePixMensal,
         aceita_entrevista: wantsInterview,
+        cta_variant: ctaVariant,
       });
 
       setSubmitted(true);
