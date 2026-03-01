@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Check } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const benefits = [
-  "14 dias grátis",
-  "Sem cartão de crédito",
-  "Cancele quando quiser",
+  "Sem produto pronto nesta etapa",
+  "Piloto em definição",
+  "Entrevistas de 15 minutos",
 ];
 
 export function CTA() {
@@ -34,16 +35,16 @@ export function CTA() {
           {/* Headline */}
           <h2 className="heading-lg mb-6">
             <span className="text-balance">
-              Pronto para proteger seus
+              Quer ajudar a construir uma solução para
               <br />
-              <span className="gradient-text">dados e sua reputação?</span>
+              <span className="gradient-text">privacidade no Pix?</span>
             </span>
           </h2>
 
           {/* Description */}
           <p className="text-lg text-white/60 max-w-xl mx-auto mb-8">
-            Junte-se a mais de 1.500 profissionais de saúde que já recebem 
-            pagamentos com privacidade e conformidade total.
+            Estamos validando a dor com profissionais de saúde e abrindo
+            lista de espera para um possível piloto.
           </p>
 
           {/* Benefits */}
@@ -62,17 +63,37 @@ export function CTA() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/interesse?plano=geral&source=cta_section"
+              href="/interesse?plano=waitlist&source=cta_section&campaign=validacao_14d&intent=privacidade_pix"
+              onClick={() =>
+                trackEvent("cta_click", {
+                  page: "home",
+                  section: "cta_section",
+                  cta_label: "Entrar na Lista de Espera",
+                  target_url: "/interesse",
+                  source: "cta_section",
+                  intent: "privacidade_pix",
+                })
+              }
               className="btn-primary text-lg px-10 py-4 group"
             >
-              Começar Gratuitamente
+              Entrar na Lista de Espera
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="/interesse?plano=demo&source=cta_demo" 
+              href="/interesse?plano=entrevista&source=cta_interview&campaign=validacao_14d&intent=entrevista" 
+              onClick={() =>
+                trackEvent("cta_click", {
+                  page: "home",
+                  section: "cta_section",
+                  cta_label: "Conversar sobre a Dor",
+                  target_url: "/interesse",
+                  source: "cta_interview",
+                  intent: "entrevista",
+                })
+              }
               className="btn-secondary text-lg px-8 py-4"
             >
-              Agendar Demo
+              Conversar sobre a Dor
             </a>
           </div>
 
@@ -85,7 +106,7 @@ export function CTA() {
             className="mt-12 pt-8 border-t border-white/10"
           >
             <p className="text-sm text-white/40">
-              Regulamentado pelo Banco Central · Conformidade LGPD · Criptografia ponta a ponta
+              Mensagens e escopo em validação · Sem promessas de operação em produção
             </p>
           </motion.div>
         </motion.div>
@@ -93,4 +114,3 @@ export function CTA() {
     </section>
   );
 }
-

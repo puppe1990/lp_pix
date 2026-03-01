@@ -16,43 +16,43 @@ const features = [
     icon: QrCode,
     title: "Chaves Pix Aleatórias",
     description:
-      "Gere chaves e QR Codes dinâmicos para cada transação. Seu CPF e nome nunca são expostos ao pagador.",
-    highlights: ["QR Codes dinâmicos", "Chaves por contexto", "Múltiplas chaves"],
+      "Hipótese principal: priorizar chaves aleatórias e cobrança por contexto para reduzir exposição de dados pessoais.",
+    highlights: ["QR Codes por contexto", "Menor exposição de CPF", "Fluxo em validação"],
   },
   {
     icon: FileText,
-    title: "Recibos Automáticos",
+    title: "Fluxo de Recibos",
     description:
-      "Integração direta com Receita Saúde. Recibos digitais emitidos automaticamente a cada pagamento confirmado.",
-    highlights: ["Receita Saúde integrada", "Emissão automática", "Relatórios fiscais"],
+      "Estamos validando como reduzir retrabalho na emissão e organização de recibos sem prometer integração ativa nesta fase.",
+    highlights: ["Rotina atual mapeada", "Pontos de atrito", "Cenários prioritários"],
   },
   {
     icon: Lock,
     title: "LGPD & Ética",
     description:
-      "Criptografia ponta a ponta, auditoria completa e conformidade com LGPD, CFP, CFO e COFFITO.",
-    highlights: ["Criptografia end-to-end", "Auditoria completa", "Conformidade total"],
+      "Objetivo da validação: entender quais controles de privacidade são essenciais para a rotina de consultório.",
+    highlights: ["Boas práticas", "Limites claros", "Sem claims absolutos"],
   },
   {
     icon: Zap,
-    title: "Notificação Instantânea",
+    title: "Confirmação de Recebimento",
     description:
-      "Confirmação de pagamento em menos de 5 segundos. Sem precisar abrir o app do banco.",
-    highlights: ["SLA <5 segundos", "Webhooks em tempo real", "Painel centralizado"],
+      "Mapeamos a necessidade de confirmação rápida de pagamento para reduzir interrupções no atendimento.",
+    highlights: ["Problema recorrente", "Prioridade por urgência", "Escopo de piloto"],
   },
   {
     icon: RefreshCcw,
-    title: "Pix Recorrente",
+    title: "Cobranças Recorrentes",
     description:
-      "Configure cobranças automáticas para sessões contínuas. Ideal para terapias semanais.",
-    highlights: ["Cobranças programadas", "Lembretes automáticos", "Gestão de pacotes"],
+      "Entendemos se faz sentido incluir fluxo recorrente já no piloto ou em fase posterior.",
+    highlights: ["Sessões frequentes", "Hipótese em teste", "Sem compromisso de entrega"],
   },
   {
     icon: Shield,
-    title: "Antifraude Integrado",
+    title: "Riscos Operacionais",
     description:
-      "Sistema de detecção de fraudes em tempo real. Proteção contra chargebacks e estornos.",
-    highlights: ["Detecção em tempo real", "Score de risco", "Seguro opcional"],
+      "Levantamos riscos percebidos no processo atual para priorizar proteções mais críticas no MVP.",
+    highlights: ["Risco percebido", "Priorização por impacto", "Roadmap de validação"],
   },
 ];
 
@@ -74,7 +74,7 @@ export function Solution() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-brand-500/10 text-brand-400 text-sm font-semibold rounded-full mb-4">
-            A Solução
+            Hipóteses de Solução
           </span>
           <h2 className="heading-lg mb-4">
             <span className="text-balance">
@@ -83,8 +83,8 @@ export function Solution() {
             </span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            SegurePix é a plataforma completa de pagamentos para profissionais 
-            de saúde que valorizam sigilo e eficiência.
+            Ainda não há produto pronto. Esta seção resume hipóteses que estamos
+            validando com profissionais de saúde antes de construir o MVP.
           </p>
         </motion.div>
 
@@ -217,4 +217,3 @@ export function Solution() {
     </section>
   );
 }
-

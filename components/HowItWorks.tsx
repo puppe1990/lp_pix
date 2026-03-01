@@ -8,39 +8,40 @@ import {
   FileCheck,
   ArrowRight,
 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const steps = [
   {
     number: "01",
     icon: UserPlus,
-    title: "Crie sua conta",
+    title: "Cadastre interesse",
     description:
-      "Cadastro rápido em menos de 3 minutos. Apenas dados básicos e verificação de identidade profissional.",
-    details: ["Verificação do CRP/CRO/CREFITO", "Sem burocracia", "Aprovação em 24h"],
+      "Você preenche um formulário rápido com profissão, volume de Pix e principal dor.",
+    details: ["Dados de contexto", "Sinal de urgência", "Sem compromisso financeiro"],
   },
   {
     number: "02",
     icon: QrCode,
-    title: "Gere suas chaves",
+    title: "Classificação de lead",
     description:
-      "Crie chaves Pix aleatórias e QR Codes para diferentes contextos: consultório, telemedicina, grupos.",
-    details: ["Chaves por contexto", "QR Codes dinâmicos", "Sem exposição de dados"],
+      "Aplicamos score por ICP, dor e urgência para priorizar quem deve ser contatado primeiro.",
+    details: ["Score 0 a 10", "Prioridade de contato", "Critérios transparentes"],
   },
   {
     number: "03",
     icon: Wallet,
-    title: "Receba pagamentos",
+    title: "Entrevista rápida",
     description:
-      "Compartilhe seu QR Code ou link de pagamento. Receba notificação instantânea a cada transação.",
-    details: ["Notificação em <5s", "Confirmação automática", "Sem consultar banco"],
+      "Convidamos profissionais para entrevista de 15 minutos focada no problema atual.",
+    details: ["Sem demo forçada", "Foco em dor real", "Objeções registradas"],
   },
   {
     number: "04",
     icon: FileCheck,
-    title: "Recibos automáticos",
+    title: "Decisão de próximo ciclo",
     description:
-      "Cada pagamento gera automaticamente um recibo digital via Receita Saúde. Tudo em conformidade.",
-    details: ["Receita Saúde integrada", "Relatórios prontos", "Sem trabalho manual"],
+      "Com dados quantitativos e qualitativos, definimos se seguimos com MVP, ajuste de ICP ou pivot.",
+    details: ["Go / no-go", "Hipóteses refinadas", "Escopo de piloto"],
   },
 ];
 
@@ -60,17 +61,17 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-accent-purple/10 text-accent-purple text-sm font-semibold rounded-full mb-4">
-            Como Funciona
+            Processo de Validação
           </span>
           <h2 className="heading-lg mb-4">
             <span className="text-balance">
-              Comece a receber em{" "}
+              Validação estruturada em{" "}
               <span className="text-accent-purple">4 passos simples</span>
             </span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Onboarding guiado em menos de 10 minutos. Sem complexidade técnica, 
-            sem integrações complicadas.
+            Sem promessa de produto pronto nesta etapa. O foco é aprender rápido
+            com sinais reais de dor e intenção.
           </p>
         </motion.div>
 
@@ -137,8 +138,21 @@ export function HowItWorks() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <a href="#precos" className="btn-primary text-lg px-8 py-4">
-            Começar Agora
+          <a
+            href="/interesse?plano=waitlist&source=flow_cta&campaign=validacao_14d&intent=privacidade_pix"
+            onClick={() =>
+              trackEvent("cta_click", {
+                page: "home",
+                section: "validation_flow",
+                cta_label: "Entrar na Lista de Espera",
+                target_url: "/interesse",
+                source: "flow_cta",
+                intent: "privacidade_pix",
+              })
+            }
+            className="btn-primary text-lg px-8 py-4"
+          >
+            Entrar na Lista de Espera
             <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
@@ -146,4 +160,3 @@ export function HowItWorks() {
     </section>
   );
 }
-

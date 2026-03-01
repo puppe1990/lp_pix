@@ -9,6 +9,7 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const floatingIcons = [
   { Icon: Shield, x: "10%", y: "20%", delay: 0, size: 24 },
@@ -19,8 +20,8 @@ const floatingIcons = [
 
 const benefits = [
   "Chaves Pix aleatórias",
-  "Recibos automáticos",
-  "Controles alinhados a LGPD",
+  "Fluxo em validação com psicólogos",
+  "Boas práticas de privacidade",
 ];
 
 export function Hero() {
@@ -70,7 +71,7 @@ export function Hero() {
         >
           <span className="w-2 h-2 bg-brand-400 rounded-full animate-pulse" />
           <span className="text-sm font-medium text-white/80">
-            +1.2M profissionais de saúde no Brasil
+            Validação aberta para profissionais de saúde
           </span>
         </motion.div>
 
@@ -125,14 +126,37 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
-            href="/interesse?plano=geral&source=hero_cta" 
+            href="/interesse?plano=waitlist&source=hero_cta&campaign=validacao_14d&intent=privacidade_pix" 
+            onClick={() =>
+              trackEvent("cta_click", {
+                page: "home",
+                section: "hero",
+                cta_label: "Entrar na Lista de Espera",
+                target_url: "/interesse",
+                source: "hero_cta",
+                intent: "privacidade_pix",
+              })
+            }
             className="btn-primary text-lg px-8 py-4 group"
           >
-            Começar Gratuitamente
+            Entrar na Lista de Espera
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
-          <a href="#como-funciona" className="btn-secondary text-lg px-8 py-4">
-            Ver Como Funciona
+          <a
+            href="/interesse?plano=entrevista&source=hero_interview&campaign=validacao_14d&intent=entrevista"
+            onClick={() =>
+              trackEvent("cta_click", {
+                page: "home",
+                section: "hero",
+                cta_label: "Participar de Entrevista",
+                target_url: "/interesse",
+                source: "hero_interview",
+                intent: "entrevista",
+              })
+            }
+            className="btn-secondary text-lg px-8 py-4"
+          >
+            Participar de Entrevista
           </a>
         </motion.div>
 

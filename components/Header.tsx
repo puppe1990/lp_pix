@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Shield, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { href: "#problema", label: "O Problema" },
   { href: "#solucao", label: "Solução" },
   { href: "#como-funciona", label: "Como Funciona" },
-  { href: "#precos", label: "Preços" },
+  { href: "#precos", label: "Piloto" },
   { href: "/blog", label: "Blog" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -61,11 +62,37 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="/interesse?plano=geral&source=header_login" className="btn-ghost">
-              Entrar
+            <a
+              href="/interesse?plano=entrevista&source=header_interview&campaign=validacao_14d&intent=entrevista"
+              onClick={() =>
+                trackEvent("cta_click", {
+                  page: "home",
+                  section: "header",
+                  cta_label: "Entrevista",
+                  target_url: "/interesse",
+                  source: "header_interview",
+                  intent: "entrevista",
+                })
+              }
+              className="btn-ghost"
+            >
+              Entrevista
             </a>
-            <a href="/interesse?plano=geral&source=header_cta" className="btn-primary group">
-              Começar Grátis
+            <a
+              href="/interesse?plano=waitlist&source=header_cta&campaign=validacao_14d&intent=privacidade_pix"
+              onClick={() =>
+                trackEvent("cta_click", {
+                  page: "home",
+                  section: "header",
+                  cta_label: "Lista de Espera",
+                  target_url: "/interesse",
+                  source: "header_cta",
+                  intent: "privacidade_pix",
+                })
+              }
+              className="btn-primary group"
+            >
+              Lista de Espera
               <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
@@ -117,11 +144,37 @@ export function Header() {
                 </motion.a>
               ))}
               <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
-                <a href="/interesse?plano=geral&source=mobile_login" className="btn-secondary justify-center">
-                  Entrar
+                <a
+                  href="/interesse?plano=entrevista&source=mobile_interview&campaign=validacao_14d&intent=entrevista"
+                  onClick={() =>
+                    trackEvent("cta_click", {
+                      page: "home",
+                      section: "mobile_menu",
+                      cta_label: "Entrevista",
+                      target_url: "/interesse",
+                      source: "mobile_interview",
+                      intent: "entrevista",
+                    })
+                  }
+                  className="btn-secondary justify-center"
+                >
+                  Entrevista
                 </a>
-                <a href="/interesse?plano=geral&source=mobile_cta" className="btn-primary justify-center">
-                  Começar Grátis
+                <a
+                  href="/interesse?plano=waitlist&source=mobile_cta&campaign=validacao_14d&intent=privacidade_pix"
+                  onClick={() =>
+                    trackEvent("cta_click", {
+                      page: "home",
+                      section: "mobile_menu",
+                      cta_label: "Lista de Espera",
+                      target_url: "/interesse",
+                      source: "mobile_cta",
+                      intent: "privacidade_pix",
+                    })
+                  }
+                  className="btn-primary justify-center"
+                >
+                  Lista de Espera
                 </a>
               </div>
             </motion.nav>
@@ -131,4 +184,3 @@ export function Header() {
     </>
   );
 }
-

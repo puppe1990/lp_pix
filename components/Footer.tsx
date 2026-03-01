@@ -46,8 +46,8 @@ export function Footer() {
               </span>
             </a>
             <p className="text-white/50 text-sm mb-6 max-w-xs">
-              Pagamentos via Pix com privacidade e conformidade para profissionais 
-              de saúde. Proteja seus dados, simplifique sua rotina.
+              Iniciativa em fase de validação para reduzir exposição de dados no
+              recebimento via Pix em profissionais de saúde.
             </p>
             <div className="space-y-2 text-sm text-white/50">
               <a
@@ -147,7 +147,7 @@ export function Footer() {
           
           <div className="flex items-center gap-4">
             <span className="text-xs text-white/30">
-              Regulamentado pelo Banco Central do Brasil
+              Projeto em validação de demanda e escopo de piloto
             </span>
             <div className="flex items-center gap-2">
               <a
@@ -169,4 +169,3 @@ export function Footer() {
     </footer>
   );
 }
-

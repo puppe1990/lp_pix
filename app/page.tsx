@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "SegurePix | Pix com Menor Exposicao de Dados para Saude",
   description:
-    "Guia e plataforma para profissionais de saude receberem via Pix com menor exposicao de CPF, organizacao de recibos e boas praticas de privacidade.",
+    "Validacao de demanda para profissionais de saude receberem via Pix com menor exposicao de CPF e melhores praticas de privacidade.",
   alternates: {
     canonical: "/",
   },
@@ -30,15 +30,15 @@ const faqJsonLd = {
       name: "Como funciona o Pix privado?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O SegurePix prioriza chaves aleatorias (EVP) e fluxo de cobranca para reduzir exposicao de dados pessoais no recebimento.",
+        text: "Estamos validando um fluxo que prioriza chaves aleatorias (EVP) para reduzir exposicao de dados no recebimento via Pix.",
       },
     },
     {
       "@type": "Question",
-      name: "O dinheiro cai direto na conta?",
+      name: "O SegurePix ja esta em producao?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A liquidacao depende do arranjo contratado. No fluxo padrao, o valor e conciliado e repassado para a conta cadastrada conforme as regras do plano.",
+        text: "Ainda nao. O projeto esta em fase de validacao de demanda e piloto.",
       },
     },
     {
@@ -46,7 +46,7 @@ const faqJsonLd = {
       name: "Tem suporte para Receita Saude?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A plataforma apoia organizacao de dados e fluxo de recibos para reduzir retrabalho no processo fiscal do consultorio.",
+        text: "Estamos mapeando cenarios e prioridades. Integracoes futuras dependem dos aprendizados da validacao.",
       },
     },
   ],

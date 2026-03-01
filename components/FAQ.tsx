@@ -7,44 +7,44 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "Como funciona o 'Pix privado'?",
+    question: "O SegurePix já é um produto pronto?",
     answer:
-      "O SegurePix prioriza chaves Pix aleatórias (EVP - Endereço Virtual de Pagamento) em vez de CPF como chave principal. Com QR Code ou link, você reduz exposição de dados pessoais e melhora a organização da cobrança no consultório.",
+      "Ainda não. Estamos em fase de validação de problema e piloto. Nesta etapa, o objetivo é entender dor real, frequência e intenção de teste antes de construir a solução completa.",
   },
   {
-    question: "O dinheiro cai direto na minha conta?",
+    question: "Como funciona o Pix com menor exposição de dados?",
     answer:
-      "Sim! Funcionamos como um facilitador de pagamentos. Após a confirmação do Pix, o valor é automaticamente transferido para sua conta bancária cadastrada. Você recebe uma notificação instantânea (em menos de 5 segundos) e o dinheiro fica disponível em D+0.",
+      "A hipótese principal é priorizar chaves Pix aleatórias e fluxos de cobrança por contexto, reduzindo a necessidade de expor CPF como chave principal. O desenho final depende do arranjo operacional validado.",
   },
   {
-    question: "É realmente seguro e legal?",
+    question: "Vocês já têm integração ativa com Receita Saúde ou PSP?",
     answer:
-      "Trabalhamos para operar com parceiros e processos alinhados às normas aplicáveis, incluindo privacidade de dados e boas práticas de segurança. A adequação final depende do fluxo contratado e da implementação no seu contexto operacional e fiscal.",
+      "Não prometemos integração ativa nesta fase. Estamos mapeando cenários e prioridades para decidir quais integrações entram no escopo do piloto.",
   },
   {
-    question: "Preciso de conhecimento técnico para usar?",
+    question: "Existe preço definido?",
     answer:
-      "Não! O SegurePix foi desenhado para profissionais de saúde, não para desenvolvedores. Nosso onboarding guiado leva menos de 10 minutos. Você só precisa criar sua conta, verificar sua identidade profissional e começar a gerar seus QR Codes. Temos suporte em português disponível para qualquer dúvida.",
+      "Ainda não existe preço comercial definitivo. As entrevistas e os formulários desta sprint ajudam a definir formato de piloto e modelo de cobrança futuro.",
   },
   {
-    question: "Como funcionam os recibos automáticos?",
+    question: "Quem está sendo priorizado na validação?",
     answer:
-      "Temos integração direta com o sistema Receita Saúde da Receita Federal. A cada pagamento confirmado, um recibo digital é gerado automaticamente com todos os dados necessários (data, valor, descrição do serviço). Você pode configurar modelos personalizados e os recibos ficam disponíveis para download tanto para você quanto para seu paciente.",
+      "O ICP principal é psicólogos autônomos que recebem Pix com frequência. Também coletamos sinais de dentistas, fisioterapeutas, médicos e nutricionistas para comparação.",
   },
   {
-    question: "Posso usar em clínicas com múltiplos profissionais?",
+    question: "O que acontece depois do cadastro em /interesse?",
     answer:
-      "Sim! O plano Enterprise suporta múltiplos usuários com permissões personalizadas. Cada profissional pode ter suas próprias chaves Pix, e o sistema faz o split automático dos pagamentos. O gestor tem acesso a relatórios consolidados e controle total sobre a operação.",
+      "Seu lead é classificado por profissão, volume, dor e urgência. Quando há aderência, entramos em contato para uma entrevista curta em até 48 horas.",
   },
   {
-    question: "Qual a taxa por transação?",
+    question: "Que tipo de promessa vocês evitam nesta fase?",
     answer:
-      "Cobramos 1,5% por transação Pix processada, além da mensalidade do plano escolhido. Essa taxa é competitiva com o mercado e inclui: processamento do Pix, notificações instantâneas, emissão de recibos e proteção antifraude básica. Não há taxas ocultas ou cobranças surpresa.",
+      "Evitamos claims absolutos como conformidade total, SLA garantido ou operação em produção sem evidência. A comunicação é transparente sobre limites do estágio atual.",
   },
   {
-    question: "E se eu já tiver um sistema de agenda?",
+    question: "Como posso contribuir melhor com a validação?",
     answer:
-      "Oferecemos integrações com os principais sistemas do mercado (Doctoralia, Nafisio, entre outros) e uma API completa para integrações customizadas. Se você já usa uma agenda, podemos integrar os pagamentos diretamente nela. Entre em contato com nosso time para avaliar seu caso.",
+      "Responder o formulário com contexto real e participar de entrevista é o que mais acelera decisões de produto. O foco é aprendizado, não venda imediata.",
   },
 ];
 
@@ -53,13 +53,11 @@ export function FAQ() {
 
   return (
     <section id="faq" className="section-padding relative">
-      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-brand-500/10 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 container-narrow">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,11 +73,10 @@ export function FAQ() {
             Tire suas <span className="gradient-text">dúvidas</span>
           </h2>
           <p className="text-lg text-white/60">
-            Não encontrou sua resposta? Fale com nosso suporte.
+            Escopo atual: validação de demanda e entrevistas com profissionais de saúde.
           </p>
         </motion.div>
 
-        {/* FAQ Items */}
         <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
@@ -116,9 +113,7 @@ export function FAQ() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-4 text-white/60 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <p className="pt-4 text-white/60 leading-relaxed">{faq.answer}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -127,7 +122,6 @@ export function FAQ() {
           ))}
         </div>
 
-        {/* Contact CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -135,9 +129,12 @@ export function FAQ() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-white/60 mb-4">Ainda tem dúvidas?</p>
-          <a href="mailto:contato@segurepix.com.br" className="btn-secondary">
-            Falar com Suporte
+          <p className="text-white/60 mb-4">Quer contribuir com a validação?</p>
+          <a
+            href="/interesse?plano=entrevista&source=faq_cta&campaign=validacao_14d&intent=entrevista"
+            className="btn-secondary"
+          >
+            Participar de entrevista
           </a>
         </motion.div>
       </div>
