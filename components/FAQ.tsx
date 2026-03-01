@@ -131,7 +131,7 @@ export function FAQ() {
         >
           <p className="text-white/60 mb-4">Quer contribuir com a validação?</p>
           <a
-            href="/interesse?plano=entrevista&source=faq_cta&campaign=validacao_14d&intent=entrevista"
+            href="/interesse?plano=entrevista&source=faq_cta&campaign=validacao_14d&content_slug=home&intent=entrevista"
             className="btn-secondary"
           >
             Participar de entrevista

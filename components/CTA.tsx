@@ -63,7 +63,7 @@ export function CTA() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/interesse?plano=waitlist&source=cta_section&campaign=validacao_14d&intent=privacidade_pix"
+              href="/interesse?plano=waitlist&source=cta_section&campaign=validacao_14d&content_slug=home&intent=privacidade_pix"
               onClick={() =>
                 trackEvent("cta_click", {
                   page: "home",
@@ -80,7 +80,7 @@ export function CTA() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="/interesse?plano=entrevista&source=cta_interview&campaign=validacao_14d&intent=entrevista" 
+              href="/interesse?plano=entrevista&source=cta_interview&campaign=validacao_14d&content_slug=home&intent=entrevista" 
               onClick={() =>
                 trackEvent("cta_click", {
                   page: "home",

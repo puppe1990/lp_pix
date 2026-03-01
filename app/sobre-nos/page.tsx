@@ -250,14 +250,14 @@ export default function SobreNosPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/interesse?plano=geral&source=sobre_nos_cta&campaign=validacao_14d&intent=privacidade_pix"
+                  href="/interesse?plano=geral&source=sobre_nos_cta&campaign=validacao_14d&content_slug=sobre-nos&intent=privacidade_pix"
                   className="btn-primary group"
                 >
                   Entrar na Lista de Espera
                   <Zap className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
                 </a>
                 <a
-                  href="/interesse?plano=demo&source=sobre_nos_interview&campaign=validacao_14d&intent=privacidade_pix"
+                  href="/interesse?plano=entrevista&source=sobre_nos_interview&campaign=validacao_14d&content_slug=sobre-nos&intent=entrevista"
                   className="btn-secondary"
                 >
                   Participar de Entrevista

@@ -153,7 +153,7 @@ export function Pricing() {
 
               <div className="space-y-3">
                 <a
-                  href={`/interesse?plano=${track.slug}&source=pilot_card&campaign=validacao_14d&intent=privacidade_pix`}
+                  href={`/interesse?plano=${track.slug}&source=pilot_card&campaign=validacao_14d&content_slug=home&intent=privacidade_pix`}
                   onClick={() =>
                     trackEvent("cta_click", {
                       page: "home",

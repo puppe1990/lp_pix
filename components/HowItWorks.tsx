@@ -139,7 +139,7 @@ export function HowItWorks() {
           className="mt-16 text-center"
         >
           <a
-            href="/interesse?plano=waitlist&source=flow_cta&campaign=validacao_14d&intent=privacidade_pix"
+            href="/interesse?plano=waitlist&source=flow_cta&campaign=validacao_14d&content_slug=home&intent=privacidade_pix"
             onClick={() =>
               trackEvent("cta_click", {
                 page: "home",

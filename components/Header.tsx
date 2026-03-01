@@ -63,7 +63,7 @@ export function Header() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/interesse?plano=entrevista&source=header_interview&campaign=validacao_14d&intent=entrevista"
+              href="/interesse?plano=entrevista&source=header_interview&campaign=validacao_14d&content_slug=home&intent=entrevista"
               onClick={() =>
                 trackEvent("cta_click", {
                   page: "home",
@@ -79,7 +79,7 @@ export function Header() {
               Entrevista
             </a>
             <a
-              href="/interesse?plano=waitlist&source=header_cta&campaign=validacao_14d&intent=privacidade_pix"
+              href="/interesse?plano=waitlist&source=header_cta&campaign=validacao_14d&content_slug=home&intent=privacidade_pix"
               onClick={() =>
                 trackEvent("cta_click", {
                   page: "home",
@@ -145,7 +145,7 @@ export function Header() {
               ))}
               <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
                 <a
-                  href="/interesse?plano=entrevista&source=mobile_interview&campaign=validacao_14d&intent=entrevista"
+                  href="/interesse?plano=entrevista&source=mobile_interview&campaign=validacao_14d&content_slug=home&intent=entrevista"
                   onClick={() =>
                     trackEvent("cta_click", {
                       page: "home",
@@ -161,7 +161,7 @@ export function Header() {
                   Entrevista
                 </a>
                 <a
-                  href="/interesse?plano=waitlist&source=mobile_cta&campaign=validacao_14d&intent=privacidade_pix"
+                  href="/interesse?plano=waitlist&source=mobile_cta&campaign=validacao_14d&content_slug=home&intent=privacidade_pix"
                   onClick={() =>
                     trackEvent("cta_click", {
                       page: "home",

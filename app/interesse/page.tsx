@@ -96,10 +96,10 @@ function InteresseContent() {
   const searchParams = useSearchParams();
   const planoParam = searchParams.get("plano") || searchParams.get("interesse") || "geral";
   const source = searchParams.get("source") || "direct";
-  const campaign = searchParams.get("campaign") || "";
-  const contentSlug = searchParams.get("content_slug") || "";
-  const intent = searchParams.get("intent") || "";
-  const ctaVariant = searchParams.get("cta_variant") || "";
+  const campaign = searchParams.get("campaign") || "na";
+  const contentSlug = searchParams.get("content_slug") || "na";
+  const intent = searchParams.get("intent") || "na";
+  const ctaVariant = searchParams.get("cta_variant") || undefined;
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");

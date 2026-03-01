@@ -155,7 +155,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
-            href={`/interesse?plano=waitlist&source=${ctaConfig.source}&campaign=validacao_14d&intent=privacidade_pix&cta_variant=${ctaVariant}`}
+            href={`/interesse?plano=waitlist&source=${ctaConfig.source}&campaign=validacao_14d&content_slug=home&intent=privacidade_pix&cta_variant=${ctaVariant}`}
             onClick={() =>
               trackEvent("cta_click", {
                 page: "home",
@@ -173,7 +173,7 @@ export function Hero() {
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="/interesse?plano=entrevista&source=hero_interview&campaign=validacao_14d&intent=entrevista"
+            href={`/interesse?plano=entrevista&source=hero_interview&campaign=validacao_14d&content_slug=home&intent=entrevista&cta_variant=${ctaVariant}`}
             onClick={() =>
               trackEvent("cta_click", {
                 page: "home",
